@@ -1,4 +1,4 @@
-# Paired Cumulative Predictive Evidence
+# PCE-APCE: Paired Cumulative Predictive Evidence
 
 This repository implements paired cumulative predictive evidence (PCE) and
 adaptive paired cumulative predictive evidence (APCE) for dynamic assimilation
