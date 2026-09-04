@@ -1,65 +1,77 @@
-# Reproduction notes
+# Reproducing the experiments
 
-This document describes the interfaces needed to rerun the code with local
-data. It does not contain the private result archives used to assemble the
-manuscript.
+All runners accept explicit input and output paths. Start with one seed, then
+use the same command with the paper seed range on a suitable compute node.
 
-## Core wave experiment
-
-From the repository root:
+## Synthetic systems
 
 ```bash
-python run_hybrid_wave.py --mode quick --filter lr --output results/wave_quick
+# Wave, nonlinear spring and heat equation
+python -m benchmarks.classical_systems --case wave --method apce \
+  --seed 2026080700 --output results/classical
+
+# Chemical reaction, pharmacokinetic infusion, pendulum,
+# FitzHugh-Nagumo and Robertson kinetics
+python -m benchmarks.applied_odes --n-seeds 1 --device cpu \
+  --output results/applied_odes
+
+# High-dimensional dynamics
+python -m benchmarks.lorenz96 --help
+python -m benchmarks.kuramoto_sivashinsky --help
+python -m benchmarks.kolmogorov_velocity --help
+python -m benchmarks.kolmogorov_blackout --help
 ```
 
-The command writes metrics and optional diagnostic arrays to the requested
-output directory. Use a separate output directory for every seed or protocol.
+The classical and applied-ODE runners generate paired truth, observation and
+forecast perturbations from the requested seed. Kolmogorov-flow runners require
+the corresponding local data path.
 
-## Figure 2 experiment runners
+## VIV-PIV reconstruction
 
-The scripts under `experiments/` expose explicit `--output-root` or
-`--result-root` arguments. Keep these paths outside tracked source folders.
-Run a small local check before a matrix:
+Copy `viv_piv/protocol.json`, set `data_root` and `output_root`, then run:
 
 ```bash
-python experiments/run_cpu_compatibility_smoke.py --help
-python experiments/run_assimilation.py --help
-python experiments/aggregate_figure2_formal.py --help
+python -m viv_piv.validate_data --config path/to/protocol.json
+python -m viv_piv.prepare --config path/to/protocol.json
+python -m viv_piv.prepare_adaptive_sensor_layout \
+  --config path/to/protocol.json --layout adaptive_fullfield_valid_x40y20
+python -m viv_piv.prepare_observation_covariance \
+  --config path/to/protocol.json --layout adaptive_fullfield_valid_x40y20 \
+  --device cuda:2
+python -m viv_piv.run_case --config path/to/protocol.json \
+  --case 0679 --method apce --seed 0 --record-trace
+python -m viv_piv.aggregate --config path/to/protocol.json
 ```
 
-The protocol matrices are included in `experiments/`; their data and output
-locations are repository-relative examples. The formal Figure 2 runs also
-require the frozen scenario assets, which are not included. The source scripts
-preserve the candidate grid, observation protocol and aggregation definitions.
+The public archive is identified by DOI 10.57745/HPA87O. The twelve training
+cases fit the POD/DMDc library and observation covariance; the five test cases
+are used only for held-out reconstruction.
 
-## Applied ODE and high-dimensional cases
+## Acoustic-field reconstruction
 
-Use the `paper_experiments/` runners with explicit input and output paths.
-Data adapters for external PDE/chaotic benchmarks expect arrays supplied by
-the user; no external dataset is silently downloaded.
-
-## VIV--PIV
-
-Set `VIV_PIV_DATA_ROOT` and `VIV_PIV_OUTPUT_ROOT`, or edit a copied JSON
-configuration. The public archive is identified by DOI 10.57745/HPA87O. A
-typical single-case sequence is:
+Prepare the measured MeshRIR S1 array as an NPZ input accepted by
+`acoustic_field_reconstruction.run`, then execute:
 
 ```bash
-python -m viv_piv_case.audit --config viv_piv_case/config_adaptive_fullfield_x40y20_formal5.json
-python -m viv_piv_case.prepare --config viv_piv_case/config_adaptive_fullfield_x40y20_formal5.json
-python -m viv_piv_case.run_case --config viv_piv_case/config_adaptive_fullfield_x40y20_formal5.json --case 0679 --method apce --seed 0 --record-trace
-python -m viv_piv_case.aggregate --config viv_piv_case/config_adaptive_fullfield_x40y20_formal5.json
+python -m acoustic_field_reconstruction.run \
+  --source-npz path/to/s1_reconstruction_input.npz \
+  --output results/acoustic_field --device cuda:2
 ```
 
-## MeshRIR and Baoding
+The fixed protocol is stored in `acoustic_field_reconstruction/protocol.json`.
 
-MeshRIR scripts accept an explicitly supplied dataset/cache path; obtain the
-dataset from DOI 10.5281/zenodo.5002817. Baoding scripts require an authorized
-local data root and never ship the measurements. The command-line interfaces
-use `--remote-root`, `--input-root` or `--data-root` for this reason.
+## Acoustic-array tracking
 
-## Provenance
+The tracking adapter consumes triangulated Cartesian observations, their
+covariances and GPS trajectories from an authorized local data copy.
 
-Record the dataset DOI/version, configuration file, seed, software versions
-and output directory for each run. Generated manifests and result files are
-local artifacts and are excluded by `.gitignore`.
+```bash
+python -m acoustic_array_tracking.prepare_dual_source --help
+python -m acoustic_array_tracking.run --stage track --task dual_source \
+  --frontend path/to/target1/frontend --output results/acoustic_tracking \
+  --method apce --seed 0 --device cuda:2
+```
+
+Preparation produces one frontend directory per target. The runner supports
+DEnKF, augmented-state EnKF, BMA, PCE and APCE under the task configuration in
+`acoustic_array_tracking/protocol.json`.

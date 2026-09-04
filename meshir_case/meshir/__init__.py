@@ -1,1 +1,0 @@
-"""MeshRIR measured wavefield pilot."""

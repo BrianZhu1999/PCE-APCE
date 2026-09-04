@@ -8,6 +8,9 @@ __pycache__/
 .venv/
 venv/
 env/
+*.egg-info/
+build/
+dist/
 
 # Local experiment outputs and generated figures
 results/
@@ -41,13 +44,9 @@ logs/
 *.out
 *.toc
 
-# Local audit inventories and provenance exports
-package_inventory*.csv
+# Generated metadata
 *.csv
-*_provenance.json
 *_manifest.json
-*_audit*.json
-*_audit*.csv
 
 # Editor and operating-system files
 .vscode/

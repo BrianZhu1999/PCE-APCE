@@ -1,124 +1,69 @@
-# Paired Cumulative Predictive Evidence for Hybrid Uncertain Dynamics
+# Paired Cumulative Predictive Evidence
 
-This repository contains the source code for the paired cumulative predictive
-evidence (PCE) and adaptive paired cumulative predictive evidence (APCE)
-experiments accompanying the manuscript *Generative dynamic assimilation of
-random--cognitive hybrid uncertain wave fields from sparse vector observations*.
+This repository implements paired cumulative predictive evidence (PCE) and
+adaptive paired cumulative predictive evidence (APCE) for dynamic assimilation
+under stochastic and cognitive uncertainty. Candidate dynamics are propagated
+in parallel, evaluated through analysis-isolated shadow forecasts and combined
+by cumulative predictive evidence.
 
-The code implements a training-free ensemble assimilation workflow in which a
-grid of candidate uncertainty coordinates is propagated by a forward model,
-scored against observations, and combined through cumulative predictive
-evidence. The repository also contains the case adapters and figure-generation
-scripts used for the synthetic wave, applied ODE, high-dimensional chaotic,
-VIV--PIV, MeshRIR and Baoding analyses.
-
-## Scope of this release
-
-This is a source-code release. Raw experimental data, private measurements,
-large result trees, internal audit archives, manuscript source files and
-compiled figures are intentionally kept out of the repository. The code is
-therefore suitable for inspection, unit testing and rerunning experiments when
-the corresponding data are obtained and paths are supplied locally.
-
-The VIV--PIV dataset is publicly available at
-[DOI 10.57745/HPA87O](https://doi.org/10.57745/HPA87O). The MeshRIR source
-dataset is documented at [DOI 10.5281/zenodo.5002817](https://doi.org/10.5281/zenodo.5002817).
-The Baoding measurements are not redistributed; the adapter accepts an
-authorized local copy. The F-16 GVT pilot uses the public benchmark at
-[DOI 10.4121/12954911.v1](https://doi.org/10.4121/12954911.v1).
-
-## Repository map
-
-| Path | Role |
-| --- | --- |
-| `hilda_da/` | Core PCE/APCE assimilation, evidence, flow, low-rank and metric modules |
-| `experiments/` | Figure 2 runners, aggregation, gates and reproducibility utilities |
-| `paper_experiments/` | Figure 3--5 experiment runners and post-processing |
-| `viv_piv_case/` | Public VIV--PIV transfer case and Figure 5 source scripts |
-| `meshir_case/` | MeshRIR/S1 reconstruction case |
-| `baoding_case/` | Authorized-data Baoding tracking adapter |
-| `f16_gvt_case/` | Isolated F-16 GVT pilot package |
-| `figures/` | Source plotting and assembly scripts; generated media are ignored |
-| `tests/` | Core, infrastructure and case-level tests |
-| `docs/` | Reproduction notes and release boundaries |
+The release contains the method, the benchmark protocols used in the paper and
+three measured-data applications. Plotting code, generated figures, result
+archives and exploratory studies are outside the public package.
 
 ## Installation
 
-The supported baseline is Python 3.11. A conda environment is provided for a
-repeatable scientific stack:
+Python 3.11 is recommended.
 
 ```bash
 conda env create -f environment.yml
-conda activate pce-apce-release
-python -m pip install -e ".[dev,cases]"
+conda activate pce-apce
+python -m pip install -e ".[dev]"
+python -m pytest -q
 ```
 
-For an existing environment:
+PyTorch should be installed with the CUDA build appropriate for the target
+machine when GPU execution is required.
+
+## Repository structure
+
+| Path | Contents |
+| --- | --- |
+| `pce_assimilation/` | PCE/APCE evidence, assimilation and ensemble-analysis components |
+| `benchmarks/` | Classical systems, applied ODEs and high-dimensional dynamics |
+| `viv_piv/` | Sparse VIV-PIV wake reconstruction |
+| `acoustic_field_reconstruction/` | Three-dimensional measured acoustic-field reconstruction |
+| `acoustic_array_tracking/` | Single- and dual-source acoustic-array tracking |
+| `tests/` | Focused method and protocol tests |
+
+Each benchmark exposes a module entry point. For example:
 
 ```bash
-python -m pip install -e ".[dev,cases]"
+python -m benchmarks.classical_systems --case wave --method apce \
+  --seed 2026080700 --output results/classical
+python -m benchmarks.applied_odes --n-seeds 1 --device cpu \
+  --output results/applied_odes
 ```
 
-PyTorch wheels are platform-specific. Install the CUDA-matched wheel supplied
-by the PyTorch project when GPU execution is required; the package itself does
-not pin a CUDA runtime.
+The full command map and expected inputs are in
+[`docs/reproduction.md`](docs/reproduction.md). Application-specific setup is
+documented in the README inside each measured-data directory.
 
-## Minimal smoke test
+## Data
 
-The following checks do not require paper result archives:
+- VIV-PIV: [DOI 10.57745/HPA87O](https://doi.org/10.57745/HPA87O)
+- MeshRIR: [DOI 10.5281/zenodo.5002817](https://doi.org/10.5281/zenodo.5002817)
+- Acoustic-array tracking: the adapter reads an authorized local copy of the
+  measured array data.
 
-```bash
-python -m compileall -q hilda_da experiments paper_experiments viv_piv_case meshir_case baoding_case f16_gvt_case
-python -m pytest -q tests/test_metrics.py tests/test_systems.py tests/test_hilda_core.py
-python run_hybrid_wave.py --mode quick --output results/quick_wave
-```
+Data paths and output paths are explicit command-line or JSON configuration
+values. Generated outputs are written under user-selected result directories
+and are ignored by Git.
 
-The minimal test command assumes a working PyTorch installation. On systems
-where the installed PyTorch wheel cannot load its native libraries, run the
-non-PyTorch tests separately and install a platform-matched wheel before using
-the assimilation modules.
+## Citation
 
-Most full tests import PyTorch and case-specific scientific libraries. Run
-them in the conda environment or on the Super-Server environment used for the
-paper analyses.
+Please cite the accompanying manuscript. Machine-readable software metadata is
+provided in [`CITATION.cff`](CITATION.cff).
 
-## Running a public VIV--PIV case
+## License
 
-Copy a configuration from `viv_piv_case/` and replace its path placeholders, or
-set the two environment variables below:
-
-```bash
-export VIV_PIV_DATA_ROOT=/path/to/viv_piv_hpa87o
-export VIV_PIV_OUTPUT_ROOT=/path/to/local/results/viv_piv
-python -m viv_piv_case.audit --config viv_piv_case/config_adaptive_fullfield_x40y20_formal5.json
-python -m viv_piv_case.prepare --config viv_piv_case/config_adaptive_fullfield_x40y20_formal5.json
-python -m viv_piv_case.run_case --config viv_piv_case/config_adaptive_fullfield_x40y20_formal5.json --case 0679 --method pce --seed 0 --record-trace
-python -m viv_piv_case.aggregate --config viv_piv_case/config_adaptive_fullfield_x40y20_formal5.json
-```
-
-The configuration separates the twelve training cases from the five external
-test cases. Cylinder displacement is supplied as a known exogenous input, and
-the assimilation observation vector contains the selected velocity samples.
-See `viv_piv_case/README.md` for the frozen protocol and data layout.
-
-## Reproducing synthetic figures
-
-Figure 2 and Figure 3 runners accept explicit result/output paths. The frozen
-protocol matrices are included under `experiments/`, with machine-specific
-locations replaced by repository-relative paths. Examples and the corresponding
-command-line arguments are collected in `docs/reproduction.md`. Raw data,
-scenario assets and formal result archives remain outside this code release.
-
-## Data and privacy boundaries
-
-Do not commit raw measurements, private Baoding data, remote workstation
-paths, credentials, generated result archives or manuscript PDFs. Use local
-paths or environment variables and keep generated outputs under an ignored
-directory. The release records dataset identifiers and protocol metadata, not
-the underlying restricted measurements.
-
-## Citation and license
-
-Please cite the accompanying manuscript and see `CITATION.cff` for machine-
-readable metadata. The source code is released under the MIT License; see
-`LICENSE`.
+The code is released under the [MIT License](LICENSE).

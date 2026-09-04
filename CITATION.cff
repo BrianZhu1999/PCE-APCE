@@ -4,7 +4,7 @@ message: "If you use this code, please cite the accompanying manuscript and this
 type: software
 authors:
   - family-names: Zhu
-    given-names: Brian
+    given-names: Ziyuan
     affiliation: "Nanjing University"
 repository-code: "https://github.com/BrianZhu1999/paired-cumulative-predictive-evidence"
 license: MIT
