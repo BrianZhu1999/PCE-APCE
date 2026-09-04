@@ -1,0 +1,32 @@
+{
+  "protocol_version": "quick-advantage-2026-08-05-v1",
+  "scope": "Paired diagnostic of HILDA under matched and misspecified dynamics",
+  "result_root": "results/quick_advantage_v1",
+  "seed_protocol": {
+    "base": 2026080500,
+    "replicates": 5,
+    "mapping": "seed = base + replicate_index; the same seed is reused across conditions and methods"
+  },
+  "system": {
+    "name": "wave",
+    "steps": 400,
+    "observation_interval": 20,
+    "observation_count": 16,
+    "observation_noise": 0.05,
+    "observation_transform": "linear"
+  },
+  "protocol": {
+    "ensemble_size": 20,
+    "alpha_mode": "fixed",
+    "fixed_model_alpha": 0.5,
+    "coverage_level": 0.9,
+    "energy_score_chunk_size": 64,
+    "checkpoint_interval": 1,
+    "dtype": "float64"
+  },
+  "conditions": {
+    "matched": {"alpha_true": 0.5},
+    "misspecified": {"alpha_true": 0.72}
+  },
+  "methods": ["hilda", "denkf", "letkf", "ensf", "iensf", "enff_f2p"]
+}

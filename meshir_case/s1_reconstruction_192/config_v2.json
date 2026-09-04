@@ -1,0 +1,33 @@
+{
+  "grid": {
+    "shape_zyx": [9, 21, 21],
+    "spacing_m": 0.05,
+    "native_sample_rate_hz": 16000,
+    "boundary_observed_count": 128,
+    "interior_observed_count": 64,
+    "model_band_hz": 750.0,
+    "model_filter_taps": 129,
+    "analysis_end_seconds": 0.064,
+    "forecast_end_seconds": 0.072
+  },
+  "physics": {
+    "fixed_sound_speed_m_s": 343.0,
+    "amplitude_damping_s_inv": 18.0,
+    "boundary_sponge": 0.96,
+    "process_noise_fraction": 0.003,
+    "nominal_boundary_closure_index": 0
+  },
+  "assimilation": {
+    "ensemble_size": 48,
+    "seed": 0,
+    "observation_interval_samples": 16,
+    "bma_temperature": 0.04,
+    "pce_temperature": 0.08,
+    "apce_temperature": 0.07,
+    "apce_min_temperature": 0.01,
+    "apce_forgetting": 0.995,
+    "apce_entropy_fraction": 0.20,
+    "score_covariance_shrinkage": 0.20,
+    "store_candidate_history": false
+  }
+}

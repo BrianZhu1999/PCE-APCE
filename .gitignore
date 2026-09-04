@@ -1,0 +1,65 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Local experiment outputs and generated figures
+results/
+outputs/
+artifacts/
+plots/
+checkpoints/
+logs/
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.zarr/
+*.gif
+*.mp4
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.pdf
+*.svg
+*.xdv
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+
+# Local audit inventories and provenance exports
+package_inventory*.csv
+*.csv
+*_provenance.json
+*_manifest.json
+*_audit*.json
+*_audit*.csv
+
+# Editor and operating-system files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+credentials.*
+secrets.*

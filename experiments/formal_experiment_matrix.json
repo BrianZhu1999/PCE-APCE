@@ -1,0 +1,83 @@
+{
+  "protocol_version": "2026-08-05-v2",
+  "scope": "Training-free primary comparison only",
+  "seed_protocol": {"base": 2026080500, "mapping": "seed = base + replicate_index"},
+  "primary_protocol": {
+    "ensemble_size": 20,
+    "observation_transform": "linear",
+    "alpha_mode": "fixed",
+    "fixed_model_alpha": 0.5,
+    "coverage_level": 0.9,
+    "energy_score_chunk_size": 64,
+    "checkpoint_interval": 1
+  },
+  "methods": ["hilda", "denkf", "letkf", "ensf", "iensf", "ensf_lr_ridge", "enff_f2p"],
+  "systems": {
+    "spring": {"replicates": 50, "steps": 400, "observation_interval": 5, "observation_count": 1, "observation_noise": 0.05, "transforms": ["linear", "atan", "square_signed"]},
+    "heat": {"replicates": 20, "steps": 1000, "observation_interval": 20, "observation_count": 16, "observation_noise": 0.05, "transforms": ["linear", "atan"]},
+    "wave": {"replicates": 20, "steps": 800, "observation_interval": 20, "observation_count": 16, "observation_noise": 0.05, "transforms": ["linear", "atan"]},
+    "burgers": {"replicates": 20, "steps": 800, "observation_interval": 20, "observation_count": 16, "observation_noise": 0.05, "transforms": ["linear", "atan", "square_signed"]},
+    "allen_cahn": {"replicates": 20, "steps": 800, "observation_interval": 20, "observation_count": 16, "observation_noise": 0.05, "transforms": ["linear", "atan", "square_signed"]},
+    "navier_stokes": {"replicates": 20, "steps": 400, "observation_interval": 10, "observation_count": 64, "observation_noise": 0.05, "transforms": ["linear", "atan"]},
+    "navier_stokes_enff": {
+      "replicates": 20,
+      "steps": 6000,
+      "observation_interval": 100,
+      "observation_count": 64,
+      "observation_noise": 0.1,
+      "transforms": ["atan"],
+      "primary_observation_transform": "atan",
+      "enff_grid_size": 256,
+      "dtype": "float32"
+    }
+  },
+  "alpha_protocol": {
+    "on_grid": 0.72,
+    "off_grid": 0.735,
+    "drift": "0.5 + 0.32 sin(2 pi t)",
+    "switch": [0.72, 0.28]
+  },
+  "pdebench_protocol": {
+    "repository_commit": "4ff3e3a4aa1561721b5571fa3a048a0a463e0568",
+    "dataset": "NS_Incom",
+    "grid": [512, 512],
+    "file_indices": [0, 1, 2, 3, 4],
+    "root": "data/pdebench/2D/NS_incom",
+    "trajectory_slice": {"start": 0, "stop": null, "stride": 1},
+    "trajectory_selection": "Cartesian product of file_indices and trajectory_index 0..3, yielding 20 independent trajectories",
+    "field_order": ["velocity_x", "velocity_y"],
+    "auxiliary_fields": ["particles", "force"],
+    "observation_mask": {"type": "seeded_uniform_without_replacement", "count": 64},
+    "normalization": "none"
+  },
+  "enff_protocol": {
+    "repository_commit": "ad51a8b79c26b8230193331e44b834d0fc070968",
+    "mode": "F2P",
+    "official_navier_stokes_config": {
+      "grid": [256, 256],
+      "channels": ["pressure", "velocity_x", "velocity_y"],
+      "state_scalar_count": 196608,
+      "time_step_size": 0.0001,
+      "observation_interval_steps": 100,
+      "assimilation_cycles": 60,
+      "ensemble_size": 20,
+      "observation_transform": "atan",
+      "observation_noise": 0.1
+    },
+    "dimensionality_note": "The repository name NavierStokesDim256 denotes a 256x256 grid; with pressure and two velocity channels the state has 196608 scalar components"
+  },
+  "stress_axes": {
+    "observation_fraction": [0.005, 0.02, 0.05, 0.1, 0.2],
+    "observation_noise": [0.01, 0.05, 0.1, 0.2],
+    "ensemble_size": [10, 20, 40, 80],
+    "hilda_flow_steps": [2, 5, 8, 12],
+    "iensf_variance_split_mode": ["variance_consistent", "literal"]
+  },
+  "metric_applicability": {
+    "all_methods": ["state_rmse", "observation_rmse", "crps", "energy_score", "coverage", "interval_width", "wall_time", "peak_gpu_memory"],
+    "hilda_and_alpha_diagnostics_only": ["alpha_absolute_error", "calibration_error", "switch_delay"],
+    "open_set_experiments_only": ["open_set_auroc", "open_set_auprc", "open_set_false_alarm_rate"]
+  },
+  "required_metrics": ["state_rmse", "observation_rmse", "crps", "energy_score", "coverage", "interval_width", "wall_time", "peak_gpu_memory", "alpha_absolute_error", "calibration_error", "switch_delay", "open_set_auroc", "open_set_auprc", "open_set_false_alarm_rate"],
+  "result_root": "results/formal_v2"
+}

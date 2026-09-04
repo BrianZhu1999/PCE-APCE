@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Paired Cumulative Predictive Evidence for Hybrid Uncertain Dynamics"
+message: "If you use this code, please cite the accompanying manuscript and this software release."
+type: software
+authors:
+  - family-names: Zhu
+    given-names: Brian
+    affiliation: "Nanjing University"
+repository-code: "https://github.com/BrianZhu1999/paired-cumulative-predictive-evidence"
+license: MIT
+version: 0.1.0
+date-released: 2026-09-04
+keywords:
+  - data assimilation
+  - uncertainty quantification
+  - predictive evidence
+  - ensemble methods
+  - acoustic wave fields

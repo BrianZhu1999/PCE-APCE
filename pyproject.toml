@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paired-cumulative-predictive-evidence"
+version = "0.1.0"
+description = "PCE/APCE ensemble assimilation for hybrid stochastic and cognitive uncertainty"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = {file = "LICENSE"}
+authors = [{name = "Brian Zhu"}]
+keywords = ["data assimilation", "uncertainty quantification", "acoustic waves"]
+dependencies = [
+  "numpy>=1.26,<2.0",
+  "scipy>=1.11,<1.14",
+  "matplotlib>=3.8,<3.9",
+  "psutil>=5.9,<6.0",
+  "torch>=2.6,<3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+]
+cases = [
+  "h5py>=3.10,<4.0",
+  "zarr>=2.17,<3.0",
+]
+
+[tool.setuptools.packages.find]
+where = [".", "meshir_case", "f16_gvt_case"]
+include = [
+  "hilda_da*",
+  "baoding_case*",
+  "viv_piv_case*",
+  "meshir*",
+  "f16_gvt*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "viv_piv_case/tests", "meshir_case/tests", "f16_gvt_case/tests"]
+pythonpath = [".", "meshir_case", "f16_gvt_case"]
+addopts = "-ra"
