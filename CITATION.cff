@@ -6,7 +6,7 @@ authors:
   - family-names: Zhu
     given-names: Ziyuan
     affiliation: "Nanjing University"
-repository-code: "https://github.com/BrianZhu1999/paired-cumulative-predictive-evidence"
+repository-code: "https://github.com/BrianZhu1999/PCE-APCE"
 license: MIT
 version: 0.1.0
 date-released: 2026-09-04
