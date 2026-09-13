@@ -1,0 +1,10 @@
+{
+  "material": "calibration",
+  "source_data_sha256": "8feb20afd01d205d9c351832fabf12846d1b900d2c5caebcd56b99c2323d3104",
+  "source_data_rows": 210,
+  "generated": "2026-09-13",
+  "interpretation": "Inspect saved parameter errors, forecast skill and uncertainty intervals across 210 exploratory development records.",
+  "delivery_html_sha256": "6c55084b483a9c1813ea2bd3f6e7c5fb3692d33171b0e043a8ecbcb2c952dcaa",
+  "source_script_sha256": "1e48036896709f5992e7a78ea8dd460e0d76a8ca2187be92508dfb18c7649514",
+  "publication_note": "Public derivative; internal workstation paths omitted."
+}

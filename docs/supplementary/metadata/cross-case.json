@@ -1,0 +1,10 @@
+{
+  "material": "cross",
+  "source_data_sha256": "ea74d23a231c9abdbd465ffd28caa7f61e3df0806bfafc02f0ef921ddd25c5ee",
+  "source_data_rows": 18,
+  "generated": "2026-09-13",
+  "interpretation": "Inspect the paired shadow-versus-analysis forecast comparison at native and eightfold observation intervals.",
+  "delivery_html_sha256": "a4470cb85f2d70037d1c7873113f3f3d2d4f32a668810f28a1011a96fa75ae53",
+  "source_script_sha256": "1e48036896709f5992e7a78ea8dd460e0d76a8ca2187be92508dfb18c7649514",
+  "publication_note": "Public derivative; internal workstation paths omitted."
+}

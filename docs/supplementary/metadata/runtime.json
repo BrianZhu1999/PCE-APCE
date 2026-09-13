@@ -1,0 +1,10 @@
+{
+  "material": "runtime",
+  "source_data_sha256": "8feb20afd01d205d9c351832fabf12846d1b900d2c5caebcd56b99c2323d3104",
+  "source_data_rows": 210,
+  "generated": "2026-09-13",
+  "interpretation": "Compare recorded computational cost and forecast error within each case and saved sample set.",
+  "delivery_html_sha256": "d183b460100ec3cac41c545c0d259c75e70bf54bf51ebf707950c6748295fa77",
+  "source_script_sha256": "1e48036896709f5992e7a78ea8dd460e0d76a8ca2187be92508dfb18c7649514",
+  "publication_note": "Public derivative; internal workstation paths omitted."
+}

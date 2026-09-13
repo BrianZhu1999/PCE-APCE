@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "title": "PCE-APCE supplementary media",
+  "repository": "https://github.com/BrianZhu1999/PCE-APCE",
+  "generated": "2026-09-13",
+  "default_language": "en",
+  "languages": [
+    "en",
+    "zh-CN"
+  ],
+  "movies": [
+    {
+      "number": 1,
+      "title_en": "Three Classical Uncertain Equations",
+      "file": "Supplementary_Movie_1_classic_systems.mp4",
+      "duration_s": 26,
+      "sha256": "942325d4136dd7333b43bc6eda68532bc5135a4d623458b2442f0cdaad06e3a3",
+      "poster": "assets/posters/movie-1.png"
+    },
+    {
+      "number": 2,
+      "title_en": "Five ODE Systems",
+      "file": "Supplementary_Movie_2_applied_odes.mp4",
+      "duration_s": 72,
+      "sha256": "c6443bde1c2d16820495b6e9490f12c529198b1e1ec56932819259dc7a0363d5",
+      "poster": "assets/posters/movie-2.png"
+    },
+    {
+      "number": 3,
+      "title_en": "Lorenz–96 Dynamics",
+      "file": "Supplementary_Movie_3_Lorenz96.mp4",
+      "duration_s": 16,
+      "sha256": "33e3c79898465852accf1f75c0491247d0bad6f92c4e986462e52451fa872284",
+      "poster": "assets/posters/movie-3.png"
+    },
+    {
+      "number": 4,
+      "title_en": "Kuramoto–Sivashinsky Equation",
+      "file": "Supplementary_Movie_4_Kuramoto_Sivashinsky.mp4",
+      "duration_s": 28,
+      "sha256": "fe5274a901acf06e27e1d8a410bdf1c392c779ad0f35344e1a387ba35840452f",
+      "poster": "assets/posters/movie-4.png"
+    },
+    {
+      "number": 5,
+      "title_en": "Kolmogorov Turbulent Flow",
+      "file": "Supplementary_Movie_5_Kolmogorov_Turbulent_Flow.mp4",
+      "duration_s": 12.833,
+      "sha256": "36edd801b9da1238a79d03cf6d92d55d17ffd3a2884508897aeba8824248f861",
+      "poster": "assets/posters/movie-5.png"
+    },
+    {
+      "number": 6,
+      "title_en": "VIV–PIV Experiment",
+      "file": "Supplementary_Movie_6_VIV_PIV.mp4",
+      "duration_s": 168.667,
+      "sha256": "f23e18fdc8797e01b53f39707b355bbb52b0083d44d58e0d60bbfa87cc238300",
+      "poster": "assets/posters/movie-6.png"
+    },
+    {
+      "number": 7,
+      "title_en": "MeshRIR 3D Acoustic Field",
+      "file": "Supplementary_Movie_7_MeshRIR_3D.mp4",
+      "duration_s": 45.667,
+      "sha256": "9d66c21321f22572c295a9dc903d679450753c02b748b10eba1c9dc2a3d40817",
+      "poster": "assets/posters/movie-7.png"
+    },
+    {
+      "number": 8,
+      "title_en": "Acoustic Source Localization and Trajectory Tracking",
+      "file": "Supplementary_Movie_8_Acoustic_Source_Localization_and_Trajectory_Tracking.mp4",
+      "duration_s": 36.375,
+      "sha256": "4c418e239870196e3c5d1d0ff557110b031f30520f5545dc13c65eb762e65f70",
+      "poster": "assets/posters/movie-8.png"
+    }
+  ],
+  "components": [
+    {
+      "file": "Supplementary_Sensor_Blackout_Explorer.html",
+      "title": "Sparse observation and blackout explorer",
+      "scope": "Observations, sensors and post-blackout forecasts",
+      "sha256": "490120ac696a2c85afa3c661d83c26b46cc30c60bedc675129ced3247dda3d1e",
+      "data_dependencies": []
+    },
+    {
+      "file": "VIV_PIV_5regimes_interactive.html",
+      "title": "VIV-PIV five-regime explorer",
+      "scope": "Sparse PIV observations, reconstructed wakes and spectra",
+      "sha256": "c2ea3fe1018171fe50cc74781464bc809b47de4b0f8492bf135178a86edf27e1",
+      "data_dependencies": []
+    },
+    {
+      "file": "MeshRIR_3D_interactive.html",
+      "title": "MeshRIR 3D acoustic field",
+      "scope": "Measured and reconstructed volumetric pressure fields",
+      "sha256": "eefb3336f42e57e0d584960d29628a09015bd2fffbaa69eb4f9edd0662983531",
+      "data_dependencies": []
+    },
+    {
+      "file": "Baoding_Tracking_3D_interactive.html",
+      "title": "Acoustic source localization and tracking",
+      "scope": "One-, two- and three-source trajectories",
+      "sha256": "72401ae1d893469e0d9bd1599e2b6205e699cb02abb77889604a8ec2e16514d6",
+      "data_dependencies": []
+    },
+    {
+      "file": "Supplementary_APCE_Inspector.html",
+      "title": "APCE mechanism inspector",
+      "scope": "Candidate weights, entropy and alpha estimates",
+      "sha256": "8fe89f1ed8943aad9566462968e05224bc69ea8a808f053a2dbb47ad53f18fa7",
+      "data_dependencies": []
+    },
+    {
+      "file": "Supplementary_FullRun_Calibration_Atlas.html",
+      "title": "Full-run calibration atlas",
+      "scope": "Recorded parameter and uncertainty metrics across 210 development rows",
+      "sha256": "b44cda4c1efc0eeacb3e8cc29a5f33bc2818f7159106a6a4251bb1a2c5ca4715",
+      "data_dependencies": [
+        "Supplementary_Calibration_Display.csv",
+        "metadata/calibration.json"
+      ]
+    },
+    {
+      "file": "Supplementary_Runtime_Pareto.html",
+      "title": "Runtime and forecast atlas",
+      "scope": "Recorded runtime and forecast skill within each case",
+      "sha256": "d908b55ea7e5717ae8f49a071c250586955913bc4e90fe23584cbe5e6f4d4434",
+      "data_dependencies": [
+        "Supplementary_Runtime_Display.csv",
+        "metadata/runtime.json"
+      ]
+    },
+    {
+      "file": "Supplementary_CrossCase_ForecastSource_Atlas.html",
+      "title": "Cross-case forecast-source atlas",
+      "scope": "Descriptive paired comparison across 18 cases",
+      "sha256": "9a3c76f4b6d5c5f556295dd3f88a5a4ecd86e7a885d593af1732cc85258f1f4d",
+      "data_dependencies": [
+        "CrossCase_ForecastSource_Display.csv",
+        "metadata/cross-case.json"
+      ]
+    }
+  ],
+  "notes": {
+    "movie_6": "Archived five-regime VIV-PIV movie: 745 spatial points and 1,490 scalar observations. The VIV-PIV interactive viewer uses the current 751-point / 1,502-scalar x40y20 formal configuration.",
+    "atlas_scope": "Calibration and runtime atlas: 210 recorded development rows. Cross-case forecast-source atlas: 18-case descriptive aggregate.",
+    "integrity": "Media hashes match the verified desktop delivery collection; component hashes refer to this public copy after relative metadata links were made portable."
+  }
+}
