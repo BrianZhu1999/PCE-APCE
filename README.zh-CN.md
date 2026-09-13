@@ -4,7 +4,7 @@
 
 PCE 与 APCE 为动态同化提供统一的证据更新机制，面向候选模型、观测和潜在认知权重均存在不确定性的场景。候选动力学并行传播，通过与分析过程隔离的影子预测进行评分，再用累积预测证据组合。APCE 在此基础上加入熵感知的候选混合更新。
 
-<p><a href="docs/supplementary/README.zh-CN.md"><strong>补充视频与查看器</strong></a> · <a href="docs/reproduction.md">复现实验</a> · <a href="CITATION.cff">引用软件</a></p>
+<p><a href="https://brianzhu1999.github.io/PCE-APCE/supplementary/"><strong>打开补充材料展示页</strong></a> · <a href="docs/supplementary/README.zh-CN.md">浏览发布文件</a> · <a href="docs/reproduction.md">复现实验</a> · <a href="CITATION.cff">引用软件</a></p>
 
 仓库同时提供论文所用的基准实验设置，以及面向读者的 8 部补充视频和 8 个可交互 HTML 查看器。媒体目录说明每个案例的用途和评价设置，公开目录记录文件校验值与来源信息。
 
