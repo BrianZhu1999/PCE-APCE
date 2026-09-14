@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "title": "PCE-APCE supplementary media",
   "repository": "https://github.com/BrianZhu1999/PCE-APCE",
-  "generated": "2026-09-13",
+  "generated": "2026-09-14",
   "default_language": "en",
   "languages": [
     "en",
@@ -100,7 +100,7 @@
       "file": "Baoding_Tracking_3D_interactive.html",
       "title": "Acoustic source localization and tracking",
       "scope": "One-, two- and three-source trajectories",
-      "sha256": "72401ae1d893469e0d9bd1599e2b6205e699cb02abb77889604a8ec2e16514d6",
+      "sha256": "0a2fa627dc53ad905ef34c14fb3131830930b991c68090729dfcdd33e8ca455b",
       "data_dependencies": []
     },
     {
