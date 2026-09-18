@@ -41,12 +41,20 @@ def build():
         delivery_file = e.get("delivery_file", e.get("file"))
         assert delivery_file and (ROOT / poster).is_file() and (ROOT / delivery_file).is_file()
         duration = f'{e["duration_s"]:.2f}'.rstrip("0").rstrip(".")
-        movies.append(dict(number=number, zh=zh, en=en, description_zh=desc_zh, description_en=desc_en, group=group, file=delivery_file, poster=poster, duration=duration))
+        movie = dict(number=number, zh=zh, en=en, description_zh=desc_zh, description_en=desc_en, group=group, file=delivery_file, poster=poster, duration=duration)
+        if number == 7:
+            movie['variants'] = e['variants']
+            assert all((ROOT / v['file']).is_file() and (ROOT / v['poster']).is_file() for v in movie['variants'])
+            movie['file'] = movie['variants'][0]['file']
+            movie['poster'] = movie['variants'][0]['poster']
+            movie['description_zh'] = '等值面与切片展示，可在同一播放时刻切换。'
+            movie['description_en'] = 'Switch between isosurfaces and slices at the same playback time.'
+        movies.append(movie)
 
     components = [
         ("1D", "稀疏观测与中断", "Sparse observations & blackout", "查看实际传感器布局、观测时刻和中断后的预测。", "Inspect sensor layouts, observation times and forecasts after blackout.", "Supplementary_Sensor_Blackout_Explorer.html"),
         ("PIV", "VIV–PIV 五工况", "VIV–PIV: five regimes", "联动查看稀疏 PIV 测量、重建场与探针频谱。", "Explore sparse PIV measurements, reconstructed fields and probe spectra.", "VIV_PIV_5regimes_interactive.html"),
-        ("3D", "MeshRIR 三维声场", "MeshRIR 3D acoustic field", "旋转声场、调整切片，并比较观测与重建。", "Rotate the volume, adjust slices and compare observations with reconstruction.", "MeshRIR_3D_interactive.html"),
+        ("3D", "MeshRIR 三维声场", "MeshRIR 3D acoustic field", "切换等值面与切片，同步旋转观测、APCE与参考声场。", "Switch isosurfaces and slices; rotate observations, APCE and reference together.", "MeshRIR_3D_interactive.html"),
         ("XYZ", "声源定位与轨迹跟踪", "Source localization & tracking", "查看单源、双源和三源的三维轨迹与不确定度。", "Explore 3D trajectories and uncertainty for one, two and three sources.", "Baoding_Tracking_3D_interactive.html"),
     ]
     diagnostics = [

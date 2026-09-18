@@ -7,6 +7,8 @@
   const player = document.getElementById('dialog-video');
   const closeButton = document.getElementById('close-player');
   const positions = new Map();
+  const selectedVariants = new Map();
+  const previewGenerations = new WeakMap();
   let language = 'en';
   let active = -1;
   let origin = null;
@@ -16,6 +18,29 @@
   const text = (zh,en) => language === 'zh' ? zh : en;
   const movieTitle = movie => language === 'zh' ? movie.zh : movie.en;
   const label = n => text(`补充视频 ${n}`,`Supplementary Movie ${n}`);
+  const variantFor = index => movies[index].variants?.find(v=>v.id===selectedVariants.get(index)) || movies[index].variants?.[0] || movies[index];
+  function variantControls(index, location) {
+    const variants=movies[index].variants;
+    if(!variants)return null;
+    const wrapper=document.createElement('div');wrapper.className='movie-variants';wrapper.dataset.variantMovie=String(index);
+    const choices=document.createElement('div');choices.className='variant-choices';choices.setAttribute('role','group');choices.dataset.ariaZh='三维声场显示方式';choices.dataset.ariaEn='3D field visualization';
+    for(const v of variants){const button=document.createElement('button');button.type='button';button.dataset.variant=v.id;button.dataset.zh=v.zh;button.dataset.en=v.en;button.addEventListener('click',()=>switchVariant(index,v.id,location));choices.append(button)}
+    wrapper.append(choices);
+    if(location==='card'){const downloads=document.createElement('div');downloads.className='variant-downloads';for(const v of variants){const link=document.createElement('a');link.href=v.file;link.download=v.file;link.dataset.zh=`下载${v.zh}版`;link.dataset.en=`Download ${v.en.toLowerCase()}`;downloads.append(link)}wrapper.append(downloads)}
+    return wrapper;
+  }
+  function updateVariants(){document.querySelectorAll('[data-variant-movie]').forEach(group=>{const index=Number(group.dataset.variantMovie),chosen=variantFor(index).id;group.querySelectorAll('[data-variant]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.variant===chosen)))});}
+  function switchVariant(index,id,location){
+    if(variantFor(index).id===id)return;
+    const inDialog=active===index&&dialog.open,source=inDialog?player:previews[index];
+    const resume=Number.isFinite(source.currentTime)?source.currentTime:(positions.get(index)||0),playing=!source.paused;
+    positions.set(index,resume);selectedVariants.set(index,id);
+    const video=previews[index],variant=variantFor(index),token=(previewGenerations.get(video)||0)+1;
+    previewGenerations.set(video,token);video.pause();video.src=variant.file;video.poster=variant.poster;
+    video.addEventListener('loadedmetadata',()=>{if(previewGenerations.get(video)!==token)return;video.currentTime=Math.min(resume,Math.max(0,video.duration-.01));if(playing&&!inDialog)video.play().catch(()=>{});},{once:true});video.load();
+    if(inDialog){player.pause();loadMovie(index,playing)}
+    updateVariants();
+  }
   function applyLanguage() {
     document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-zh][data-en]').forEach(el => {el.textContent = el.dataset[language];});
@@ -25,6 +50,7 @@
     previews.forEach((v,i)=>v.setAttribute('aria-label',label(movies[i].number)+': '+movieTitle(movies[i])));
     previews.forEach((v,i)=>updatePreviewButton(i));
     if (active >= 0) updatePlayerTitle();
+    updateVariants();
     updateFilterStatus();
   }
   function updatePlayerTitle() {
@@ -36,8 +62,12 @@
     document.getElementById('next-movie').disabled = active === movies.length - 1;
     player.setAttribute('aria-label',label(movie.number)+': '+movieTitle(movie));
     const download = document.getElementById('download-movie');
-    download.href = movie.file;
-    download.download = movie.file;
+    download.href = variantFor(active).file;
+    download.download = variantFor(active).file;
+    const existing=document.getElementById('dialog-variants');
+    if(existing)existing.remove();
+    const controls=variantControls(active,'dialog');
+    if(controls){controls.id='dialog-variants';document.querySelector('.player-top').after(controls);controls.querySelectorAll('[data-zh][data-en]').forEach(el=>el.textContent=el.dataset[language]);controls.querySelectorAll('[data-aria-zh]').forEach(el=>el.setAttribute('aria-label',el.dataset[language==='zh'?'ariaZh':'ariaEn']));updateVariants();}
   }
   function pauseOthers(current) {
     [...previews,player].forEach(v => {if (v !== current) v.pause();});
@@ -68,14 +98,14 @@
   function savePosition() {
     if (active >= 0 && Number.isFinite(player.currentTime)) positions.set(active,player.currentTime);
   }
-  function loadMovie(index) {
+  function loadMovie(index, autoplay=true) {
     generation += 1;
     const token = generation;
     active = index;
     updatePlayerTitle();
     document.getElementById('player-error').hidden = true;
-    player.poster = movies[index].poster;
-    player.src = movies[index].file;
+    player.poster = variantFor(index).poster;
+    player.src = variantFor(index).file;
     const resume = positions.get(index) || 0;
     player.addEventListener('loadedmetadata',() => {
       if (token !== generation || !dialog.open) return;
@@ -83,7 +113,7 @@
     },{once:true});
     player.load();
     // Native controls remain available when the browser declines autoplay.
-    const pending = player.play();
+    const pending = autoplay ? player.play() : null;
     if (pending) pending.catch(()=>{});
   }
   function openMovie(index,button) {
@@ -146,5 +176,6 @@
   }));
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseOthers(null);});
   window.addEventListener('pagehide',()=>pauseOthers(null));
+  movies.forEach((movie,index)=>{const controls=variantControls(index,'card');if(controls)cards[index].querySelector('.movie-description').after(controls)});
   applyLanguage();
 })();

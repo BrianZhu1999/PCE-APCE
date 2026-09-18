@@ -7,12 +7,20 @@ This folder accompanies the **PCE–APCE** method for dynamic assimilation under
 ## Contents
 
 - `index.html` — bilingual catalogue (English is the default; use the 中文 / English control to switch and the choice is remembered locally).
-- `Supplementary_Movie_*.mp4` — eight H.264 supplementary videos.
+- `Supplementary_Movie_*.mp4` — eight numbered H.264 movies; Movie 7 includes isosurface and original slice versions.
 - `*_interactive.html` — interactive views for sensor blackout, VIV–PIV, MeshRIR and acoustic-array tracking.
 - `catalog.json` — machine-readable titles, routes, source notes and verification fields.
 - `code/` — deterministic page builder and the local CSS/JavaScript sources.
 
 The catalogue keeps the numbered sequence used in the manuscript. Movie 6 is the archived VIV–PIV movie supplied with the earlier five-regime presentation; the interactive VIV–PIV component is the current 751-observation view. These are labelled separately so the two records are not conflated.
+
+### MeshRIR: isosurfaces and slices
+
+Movie 7 and the [3D viewer](MeshRIR_3D_interactive.html) open in **Isosurfaces** mode. Switch to **Slices** to inspect the same recorded time. The movie switch retains playback position and pause state; the interactive switch also retains rotation and zoom. Separate video downloads are available on the Movie 7 card. The [original standalone slice viewer](MeshRIR_3D_slices_legacy.html) is preserved.
+
+All 1,024 samples from 0 to 63.9375 ms are retained. The three panels show all 64 interior measurements, APCE reconstruction and measured reference on the 21 × 21 × 9 grid. Reconstruction also uses 128 boundary measurements. Isosurfaces use fixed pressure levels ±0.001, ±0.002 and ±0.004 in the data's arbitrary units; observed pressure and slice colours use a fixed ±0.02 scale with saturation tips. Surfaces are extracted from the original grid without smoothing pressure or geometry. Positive and negative surfaces can be toggled independently, and **Paper view** restores the camera used in the figure.
+
+For offline use, keep `MeshRIR_3D_interactive.html` together with the **entire `meshrir_isosurface_data/` folder**. Surface files load by time segment; playback retains every recorded sample and may slow while loading on a slow device or connection. The archived slice viewer remains a single HTML file. Movie playback is 24 samples per second, with the same two-second title and one-second final hold in both versions.
 
 ## Rebuild locally
 

@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "title": "PCE-APCE supplementary media",
   "repository": "https://github.com/BrianZhu1999/PCE-APCE",
-  "generated": "2026-09-14",
+  "generated": "2026-09-18",
   "default_language": "en",
   "languages": [
     "en",
@@ -60,10 +60,31 @@
     {
       "number": 7,
       "title_en": "MeshRIR 3D Acoustic Field",
-      "file": "Supplementary_Movie_7_MeshRIR_3D.mp4",
+      "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
       "duration_s": 45.667,
-      "sha256": "9d66c21321f22572c295a9dc903d679450753c02b748b10eba1c9dc2a3d40817",
-      "poster": "assets/posters/movie-7.png"
+      "sha256": "98b238bed4f0fb04b9d2701596e9b5f65e55190d55fad0a949291a225cd43fef",
+      "poster": "assets/posters/movie-7-isosurfaces.png",
+      "default_variant": "isosurfaces",
+      "variants": [
+        {
+          "id": "isosurfaces",
+          "zh": "等值面",
+          "en": "Isosurfaces",
+          "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
+          "poster": "assets/posters/movie-7-isosurfaces.png",
+          "sha256": "98b238bed4f0fb04b9d2701596e9b5f65e55190d55fad0a949291a225cd43fef",
+          "duration_s": 45.666666666666664
+        },
+        {
+          "id": "slices",
+          "zh": "切片",
+          "en": "Slices",
+          "file": "Supplementary_Movie_7_MeshRIR_3D.mp4",
+          "poster": "assets/posters/movie-7.png",
+          "sha256": "9d66c21321f22572c295a9dc903d679450753c02b748b10eba1c9dc2a3d40817",
+          "duration_s": 45.667
+        }
+      ]
     },
     {
       "number": 8,
@@ -92,9 +113,17 @@
     {
       "file": "MeshRIR_3D_interactive.html",
       "title": "MeshRIR 3D acoustic field",
-      "scope": "Measured and reconstructed volumetric pressure fields",
-      "sha256": "eefb3336f42e57e0d584960d29628a09015bd2fffbaa69eb4f9edd0662983531",
-      "data_dependencies": []
+      "scope": "Synchronized isosurfaces and slices of observations, APCE and measured reference",
+      "sha256": "d6956a91703d1fa31809f862cd1a4f68e515f484111e76d52bc7141d1cef147c",
+      "data_dependencies": [
+        "meshrir_isosurface_data/"
+      ],
+      "default_view": "isosurfaces",
+      "legacy_viewer": {
+        "file": "MeshRIR_3D_slices_legacy.html",
+        "sha256": "eefb3336f42e57e0d584960d29628a09015bd2fffbaa69eb4f9edd0662983531"
+      },
+      "display_details": "meshrir_display_details.json"
     },
     {
       "file": "Baoding_Tracking_3D_interactive.html",

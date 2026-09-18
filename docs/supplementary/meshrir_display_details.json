@@ -1,0 +1,702 @@
+{
+  "date": "2026-09-18",
+  "source_dataset": "MeshRIR S1-M3969",
+  "source_sha256": "554597ae447a0760a708f2b24dd54233a679f790a6a20ad51799a0ffc569d6b5",
+  "field_sha256": "859b07977e64804e4c9a04e50e201fe88b74e4785500463d5f94760ac2083130",
+  "html_sha256": "d6956a91703d1fa31809f862cd1a4f68e515f484111e76d52bc7141d1cef147c",
+  "frames": 1024,
+  "grid_order_zyx": [
+    9,
+    21,
+    21
+  ],
+  "time_ms": [
+    0,
+    63.9375
+  ],
+  "source_sample_rate_hz": 16000,
+  "pressure_units": "arbitrary units",
+  "isosurface_levels": [
+    -0.004,
+    -0.002,
+    -0.001,
+    0.001,
+    0.002,
+    0.004
+  ],
+  "opacities": {
+    "0.001": 0.16,
+    "0.002": 0.32,
+    "0.004": 0.82
+  },
+  "camera": {
+    "azimuth": -53,
+    "elevation": 38
+  },
+  "observation_color_range": [
+    -0.02,
+    0.02
+  ],
+  "interior_observations": 64,
+  "boundary_observations": 128,
+  "panels": {
+    "a": "all 64 interior reference observations",
+    "b": "APCE mean",
+    "c": "measured reference"
+  },
+  "geometry": "Lewiner marching cubes, full grid, all faces retained, float32 coordinates; normal-only illumination averaging",
+  "fields": "exact float32, no smoothing or normalization",
+  "chunk_size": 16,
+  "mesh_files": [
+    {
+      "file": "chunk_00.js",
+      "frames": [
+        0,
+        15
+      ],
+      "raw_bytes": 186700,
+      "compressed_bytes": 111063,
+      "sha256": "3e59b52cb66c87ae7a8b9a4b22cd67ea32c22bfc67558f810a0d6869cb8a14e1"
+    },
+    {
+      "file": "chunk_01.js",
+      "frames": [
+        16,
+        31
+      ],
+      "raw_bytes": 205136,
+      "compressed_bytes": 128309,
+      "sha256": "512beb1c09cad3001a34e0a70ecb3d62333dc936b32a2cea09457e3a974fc154"
+    },
+    {
+      "file": "chunk_02.js",
+      "frames": [
+        32,
+        47
+      ],
+      "raw_bytes": 375292,
+      "compressed_bytes": 255544,
+      "sha256": "0e0a1a00aa8c31ea14bdc848bbb0125fcf8b3e144ac41ebe91e524b4f742b68d"
+    },
+    {
+      "file": "chunk_03.js",
+      "frames": [
+        48,
+        63
+      ],
+      "raw_bytes": 1081568,
+      "compressed_bytes": 762022,
+      "sha256": "0fd8c51d6211d1359cb3cf2ed1238f228f794e3efbd97a15d92bd6e9fca6fe2c"
+    },
+    {
+      "file": "chunk_04.js",
+      "frames": [
+        64,
+        79
+      ],
+      "raw_bytes": 2140224,
+      "compressed_bytes": 1503942,
+      "sha256": "4222a24eac9fa3f09b0397cfec210effd68a35ad9425b30307e0a0fac4c7d882"
+    },
+    {
+      "file": "chunk_05.js",
+      "frames": [
+        80,
+        95
+      ],
+      "raw_bytes": 2775820,
+      "compressed_bytes": 1955234,
+      "sha256": "4ab6ca1db591ff3b5b596d3e97378a42be80671cb418653e3fe234227f83e424"
+    },
+    {
+      "file": "chunk_06.js",
+      "frames": [
+        96,
+        111
+      ],
+      "raw_bytes": 2680652,
+      "compressed_bytes": 1888989,
+      "sha256": "e95f2c9e22bfd7c2dbc0f646002beb7bef9bc95750449cacb8bc1437f3f9a0b2"
+    },
+    {
+      "file": "chunk_07.js",
+      "frames": [
+        112,
+        127
+      ],
+      "raw_bytes": 2412532,
+      "compressed_bytes": 1667432,
+      "sha256": "877b0f2f89d9ac155e0ca24aebd8cb0f4713ea6e976b5a03cbbe0ae751c6f34d"
+    },
+    {
+      "file": "chunk_08.js",
+      "frames": [
+        128,
+        143
+      ],
+      "raw_bytes": 1913780,
+      "compressed_bytes": 1327300,
+      "sha256": "332d4c5b9712c2aed127a90478f2af2c8d66938d4dfe5e436fddbead1c460762"
+    },
+    {
+      "file": "chunk_09.js",
+      "frames": [
+        144,
+        159
+      ],
+      "raw_bytes": 2363544,
+      "compressed_bytes": 1614838,
+      "sha256": "cdf3cf4a15df8beba92cfe7231c4278c293901d54e78cbf7da4baa61f6868405"
+    },
+    {
+      "file": "chunk_10.js",
+      "frames": [
+        160,
+        175
+      ],
+      "raw_bytes": 2604556,
+      "compressed_bytes": 1795159,
+      "sha256": "996940b47f4bb092750f000010f069c6987d302a7f92b10481710209091178c8"
+    },
+    {
+      "file": "chunk_11.js",
+      "frames": [
+        176,
+        191
+      ],
+      "raw_bytes": 2848172,
+      "compressed_bytes": 1967575,
+      "sha256": "c26092b0fb6556bbcbb2382b489987c42cfb9be43398d5cb91df143727b99e72"
+    },
+    {
+      "file": "chunk_12.js",
+      "frames": [
+        192,
+        207
+      ],
+      "raw_bytes": 2366404,
+      "compressed_bytes": 1646286,
+      "sha256": "a5b5461e9fd25d60edd6f33ce562ac8c32c8ed2d0a9730074999385d6c4cc619"
+    },
+    {
+      "file": "chunk_13.js",
+      "frames": [
+        208,
+        223
+      ],
+      "raw_bytes": 2973432,
+      "compressed_bytes": 2081379,
+      "sha256": "aa98f6da75fbb29df6ad21d4739a8bb53fac57af9143126042e55263123a0f99"
+    },
+    {
+      "file": "chunk_14.js",
+      "frames": [
+        224,
+        239
+      ],
+      "raw_bytes": 3471376,
+      "compressed_bytes": 2445825,
+      "sha256": "351eb3cc5f1fcc852a15bfeb2dbade9ff7442cbf1d1f1ec58cfb3359a8a30d8c"
+    },
+    {
+      "file": "chunk_15.js",
+      "frames": [
+        240,
+        255
+      ],
+      "raw_bytes": 3752900,
+      "compressed_bytes": 2633048,
+      "sha256": "1d1c3c99bd94af1fd61cc535785e29fa733f252efc23b382b061a88162908574"
+    },
+    {
+      "file": "chunk_16.js",
+      "frames": [
+        256,
+        271
+      ],
+      "raw_bytes": 2729304,
+      "compressed_bytes": 1898514,
+      "sha256": "cd3a5700ad7df067cbdc4bbcb909ba397a30858f539232d4cdc3618c3b7878e1"
+    },
+    {
+      "file": "chunk_17.js",
+      "frames": [
+        272,
+        287
+      ],
+      "raw_bytes": 3219724,
+      "compressed_bytes": 2257632,
+      "sha256": "787c64b6181b47f724680ce889d2c8adb696f06d65350ce9ddeb79a0937da5fa"
+    },
+    {
+      "file": "chunk_18.js",
+      "frames": [
+        288,
+        303
+      ],
+      "raw_bytes": 3753712,
+      "compressed_bytes": 2651718,
+      "sha256": "01ddf3c1edc57f8ed87ac41201e520540ced6906e0a0b7cb7a0a14dab76e79eb"
+    },
+    {
+      "file": "chunk_19.js",
+      "frames": [
+        304,
+        319
+      ],
+      "raw_bytes": 3144264,
+      "compressed_bytes": 2219566,
+      "sha256": "eadcafab53cee979690ede9105dd0ea9f6b7dc72f4f988285e64ca8676076320"
+    },
+    {
+      "file": "chunk_20.js",
+      "frames": [
+        320,
+        335
+      ],
+      "raw_bytes": 2842340,
+      "compressed_bytes": 1993000,
+      "sha256": "b55e0951fdb8949fb407e75c71a90c791c1a4f89af55dbeae728b0515e0e338d"
+    },
+    {
+      "file": "chunk_21.js",
+      "frames": [
+        336,
+        351
+      ],
+      "raw_bytes": 3302476,
+      "compressed_bytes": 2332988,
+      "sha256": "09dbb5cdc80238fb9c2f24e144775b96064562595bc2e6e9d355832ad8733480"
+    },
+    {
+      "file": "chunk_22.js",
+      "frames": [
+        352,
+        367
+      ],
+      "raw_bytes": 3328376,
+      "compressed_bytes": 2350999,
+      "sha256": "87c24e573c763d15a1600cd19184efd75ac4e6101304c9bcfbac8dda963a506f"
+    },
+    {
+      "file": "chunk_23.js",
+      "frames": [
+        368,
+        383
+      ],
+      "raw_bytes": 2546068,
+      "compressed_bytes": 1784591,
+      "sha256": "40afd9aca301916559eb89cc93d639489ab8a4f9557219a5da2d1521c478f949"
+    },
+    {
+      "file": "chunk_24.js",
+      "frames": [
+        384,
+        399
+      ],
+      "raw_bytes": 2934624,
+      "compressed_bytes": 2074825,
+      "sha256": "34fd4762e35c6f76032fc61999ab5a12489e585f774bc32814c7c44fa94cae6e"
+    },
+    {
+      "file": "chunk_25.js",
+      "frames": [
+        400,
+        415
+      ],
+      "raw_bytes": 3299920,
+      "compressed_bytes": 2328897,
+      "sha256": "21f182a3a871f92f007a5ce709b7a12e76b466b76b592388b67e2c8ad88d4cad"
+    },
+    {
+      "file": "chunk_26.js",
+      "frames": [
+        416,
+        431
+      ],
+      "raw_bytes": 1941916,
+      "compressed_bytes": 1350484,
+      "sha256": "58d0ce90b7b3b6bd0dbd57eb402dde336275ccc422436beef9b949c8636cdf90"
+    },
+    {
+      "file": "chunk_27.js",
+      "frames": [
+        432,
+        447
+      ],
+      "raw_bytes": 2074592,
+      "compressed_bytes": 1456309,
+      "sha256": "38577ac5348ea2477d02fe81d322320f21b8e8f2211e92d0cbfba9f4f3365de7"
+    },
+    {
+      "file": "chunk_28.js",
+      "frames": [
+        448,
+        463
+      ],
+      "raw_bytes": 2661980,
+      "compressed_bytes": 1865650,
+      "sha256": "f874938ffd65f64b7541597561a1a1dac7743107605ae38ffd913e3376b9dd66"
+    },
+    {
+      "file": "chunk_29.js",
+      "frames": [
+        464,
+        479
+      ],
+      "raw_bytes": 2913896,
+      "compressed_bytes": 2052723,
+      "sha256": "d6eeecfd70258934765a06da77ae05287de94314743bc5610951a81cdc41f01b"
+    },
+    {
+      "file": "chunk_30.js",
+      "frames": [
+        480,
+        495
+      ],
+      "raw_bytes": 2978920,
+      "compressed_bytes": 2098663,
+      "sha256": "51f7739188e80f2414e4ffb2b72ecd1b27867d6a523c78afac7e9079f8602343"
+    },
+    {
+      "file": "chunk_31.js",
+      "frames": [
+        496,
+        511
+      ],
+      "raw_bytes": 2492636,
+      "compressed_bytes": 1745959,
+      "sha256": "d1c536b234bc45c7d05be38831ae0edfba5d42098508b9d9f36e6707996423a4"
+    },
+    {
+      "file": "chunk_32.js",
+      "frames": [
+        512,
+        527
+      ],
+      "raw_bytes": 3580628,
+      "compressed_bytes": 2533395,
+      "sha256": "1cf0f268c4547c3cee600ac0f9f654df753f850b0bfc428ad3059477b236555c"
+    },
+    {
+      "file": "chunk_33.js",
+      "frames": [
+        528,
+        543
+      ],
+      "raw_bytes": 2135856,
+      "compressed_bytes": 1511521,
+      "sha256": "8e9f0ecceab2aba6943511e28b835d6fe8e884d4e0da20534ffab3f7ba944660"
+    },
+    {
+      "file": "chunk_34.js",
+      "frames": [
+        544,
+        559
+      ],
+      "raw_bytes": 1859552,
+      "compressed_bytes": 1312245,
+      "sha256": "55f0fd4005fbc3dbbf7e029490b2a4b1fb6d38fc8abfa73d4c02d857214277b4"
+    },
+    {
+      "file": "chunk_35.js",
+      "frames": [
+        560,
+        575
+      ],
+      "raw_bytes": 3696716,
+      "compressed_bytes": 2614612,
+      "sha256": "1f160b6527f0c42c975c72e082b49536e40769303936c57ef8857d13360ea39e"
+    },
+    {
+      "file": "chunk_36.js",
+      "frames": [
+        576,
+        591
+      ],
+      "raw_bytes": 2345576,
+      "compressed_bytes": 1659471,
+      "sha256": "bbf73b1912d1b187c56b11290ebf3f2b0c660892d3a5295e722c59923336d280"
+    },
+    {
+      "file": "chunk_37.js",
+      "frames": [
+        592,
+        607
+      ],
+      "raw_bytes": 2569956,
+      "compressed_bytes": 1813291,
+      "sha256": "2b1a09d33a9d385c512f261a9974e32c3cee082bc71f71567d598fa45da4ea9d"
+    },
+    {
+      "file": "chunk_38.js",
+      "frames": [
+        608,
+        623
+      ],
+      "raw_bytes": 2624780,
+      "compressed_bytes": 1841982,
+      "sha256": "e6921fd58dbcae7e8a0bb8e2134fd94ba307ba6be03a267a565f1df2635c7fad"
+    },
+    {
+      "file": "chunk_39.js",
+      "frames": [
+        624,
+        639
+      ],
+      "raw_bytes": 2492340,
+      "compressed_bytes": 1747927,
+      "sha256": "e096f26fd0229d9c38c93280bb3958857385528b847a0062ee8128187536e87d"
+    },
+    {
+      "file": "chunk_40.js",
+      "frames": [
+        640,
+        655
+      ],
+      "raw_bytes": 3429016,
+      "compressed_bytes": 2420193,
+      "sha256": "5d6105394dc3ab1c1c7b95782cc673ddbf2d8497e4b265d02476d1c1f0954473"
+    },
+    {
+      "file": "chunk_41.js",
+      "frames": [
+        656,
+        671
+      ],
+      "raw_bytes": 2473732,
+      "compressed_bytes": 1736456,
+      "sha256": "b2c94c851553a2e5656d3f8171cb4e6a72f90fc4b012bbbeef19f822af6f2896"
+    },
+    {
+      "file": "chunk_42.js",
+      "frames": [
+        672,
+        687
+      ],
+      "raw_bytes": 2907796,
+      "compressed_bytes": 2046842,
+      "sha256": "bf26d0bbca92d9e99fc71db247581d04c7c86ce47460e2cf6453279519ee13a9"
+    },
+    {
+      "file": "chunk_43.js",
+      "frames": [
+        688,
+        703
+      ],
+      "raw_bytes": 3097276,
+      "compressed_bytes": 2180303,
+      "sha256": "108f53be0ec9ceb18075bddbd5f6b24e8c3eee3f930976566c07a50bd0b39b9f"
+    },
+    {
+      "file": "chunk_44.js",
+      "frames": [
+        704,
+        719
+      ],
+      "raw_bytes": 3006368,
+      "compressed_bytes": 2113060,
+      "sha256": "a7756e76f6c5afbe75e411f68d166e2e6ab8403f664de5d58ec0be38e85c2991"
+    },
+    {
+      "file": "chunk_45.js",
+      "frames": [
+        720,
+        735
+      ],
+      "raw_bytes": 3577108,
+      "compressed_bytes": 2520978,
+      "sha256": "1b9d69715bf6e70f0b811eb32bc7ca096318669f413a9f63b7af90818261b1e0"
+    },
+    {
+      "file": "chunk_46.js",
+      "frames": [
+        736,
+        751
+      ],
+      "raw_bytes": 3587208,
+      "compressed_bytes": 2534171,
+      "sha256": "fe51ab5fcd13e3bcc88b5e05777474daae2574e69ef8de0c2fd40f9add43feaa"
+    },
+    {
+      "file": "chunk_47.js",
+      "frames": [
+        752,
+        767
+      ],
+      "raw_bytes": 2426692,
+      "compressed_bytes": 1714233,
+      "sha256": "9a36b921d255acdce53bca57cccdc905b60885aa91926a1ba292499c2724fdb3"
+    },
+    {
+      "file": "chunk_48.js",
+      "frames": [
+        768,
+        783
+      ],
+      "raw_bytes": 1262532,
+      "compressed_bytes": 889619,
+      "sha256": "e358f96f7fc7e6e3014b0093b3a9eaaeffc69881d6717dcb38b6412e4d9f44a2"
+    },
+    {
+      "file": "chunk_49.js",
+      "frames": [
+        784,
+        799
+      ],
+      "raw_bytes": 2709960,
+      "compressed_bytes": 1913471,
+      "sha256": "e187c46bec409c8946a7c869c700dda935fd6187f626596015332be2f28502e5"
+    },
+    {
+      "file": "chunk_50.js",
+      "frames": [
+        800,
+        815
+      ],
+      "raw_bytes": 2373928,
+      "compressed_bytes": 1674788,
+      "sha256": "cbf21d9b42ddaec370a7225a011754af3e049ff8d2b2928171f529e2343bb46c"
+    },
+    {
+      "file": "chunk_51.js",
+      "frames": [
+        816,
+        831
+      ],
+      "raw_bytes": 708276,
+      "compressed_bytes": 496189,
+      "sha256": "a4da43f78a4ede40cf74b2702281894ac6640b65490f8c6226fe506b787a9120"
+    },
+    {
+      "file": "chunk_52.js",
+      "frames": [
+        832,
+        847
+      ],
+      "raw_bytes": 2544268,
+      "compressed_bytes": 1785647,
+      "sha256": "d0567defa8e2d297a5fb7eff922905e2856c952aabc16c7b0512f54f5db163b5"
+    },
+    {
+      "file": "chunk_53.js",
+      "frames": [
+        848,
+        863
+      ],
+      "raw_bytes": 2764484,
+      "compressed_bytes": 1951854,
+      "sha256": "aff4a889260af0e276d160dd5e0ed25511b3f48345c3cd1b18ce345f0b41039c"
+    },
+    {
+      "file": "chunk_54.js",
+      "frames": [
+        864,
+        879
+      ],
+      "raw_bytes": 1960124,
+      "compressed_bytes": 1383720,
+      "sha256": "2698a55542dd961acb953cf614b7cadbca566ca69035dd5ec55666ea6b2a743f"
+    },
+    {
+      "file": "chunk_55.js",
+      "frames": [
+        880,
+        895
+      ],
+      "raw_bytes": 2509152,
+      "compressed_bytes": 1769868,
+      "sha256": "fd953430f69e7fcaa68a74b47dee7bcd8ddd93c8ec4a976c9a3621a05d14b7cf"
+    },
+    {
+      "file": "chunk_56.js",
+      "frames": [
+        896,
+        911
+      ],
+      "raw_bytes": 3402384,
+      "compressed_bytes": 2402749,
+      "sha256": "c61a42a9e5e7ad1b7d36f9be93be2acbc85135b8e23a5464a6d04828309f69ee"
+    },
+    {
+      "file": "chunk_57.js",
+      "frames": [
+        912,
+        927
+      ],
+      "raw_bytes": 1631956,
+      "compressed_bytes": 1148958,
+      "sha256": "56eac9cb85f28165cc78e7c9e063efcd93bbb5d870e8ce73978b7fa9074c3b22"
+    },
+    {
+      "file": "chunk_58.js",
+      "frames": [
+        928,
+        943
+      ],
+      "raw_bytes": 2384364,
+      "compressed_bytes": 1684986,
+      "sha256": "37c549d3c49fe104876d2173967d5274c9304889c204228822111364a137b926"
+    },
+    {
+      "file": "chunk_59.js",
+      "frames": [
+        944,
+        959
+      ],
+      "raw_bytes": 3462072,
+      "compressed_bytes": 2444882,
+      "sha256": "64c702f821852f23bede6c5a611f44806e3ccc1197225e70616fca5971fef9f4"
+    },
+    {
+      "file": "chunk_60.js",
+      "frames": [
+        960,
+        975
+      ],
+      "raw_bytes": 2862232,
+      "compressed_bytes": 2022493,
+      "sha256": "b16047eadda4a9d79cbf78e9b54ee269ce90269d1291f84472bb9e0c8a8c9d7f"
+    },
+    {
+      "file": "chunk_61.js",
+      "frames": [
+        976,
+        991
+      ],
+      "raw_bytes": 3424040,
+      "compressed_bytes": 2418211,
+      "sha256": "9bb9aec82ee8b108dff62ea4909f721a08b3bcf7816f0569b92741d1b9545581"
+    },
+    {
+      "file": "chunk_62.js",
+      "frames": [
+        992,
+        1007
+      ],
+      "raw_bytes": 3244672,
+      "compressed_bytes": 2294673,
+      "sha256": "cc658251d0a726606c224bdf50cdc84c24fb328935f4c819d17d08041a8de50d"
+    },
+    {
+      "file": "chunk_63.js",
+      "frames": [
+        1008,
+        1023
+      ],
+      "raw_bytes": 3510756,
+      "compressed_bytes": 2484369,
+      "sha256": "7c918e52d988776e407372c1eaf8875fa9f3ce6c846024c623c8082df53de235"
+    }
+  ],
+  "movie": {
+    "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
+    "sha256": "98b238bed4f0fb04b9d2701596e9b5f65e55190d55fad0a949291a225cd43fef",
+    "frames": 1096,
+    "fps": 24,
+    "title_frames": 48,
+    "data_frames": 1024,
+    "hold_frames": 24
+  },
+  "scientific_recomputation": false
+}

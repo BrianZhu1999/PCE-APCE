@@ -1,0 +1,5 @@
+# Preserve verified generated media bytes, including legacy HTML line endings.
+MeshRIR_3D_interactive.html -text
+# Its original terminal blank line is part of the byte-identical archive.
+MeshRIR_3D_slices_legacy.html -text whitespace=-blank-at-eof
+meshrir_isosurface_data/*.js -text
