@@ -47,6 +47,10 @@ def build():
             assert all((ROOT / v['file']).is_file() and (ROOT / v['poster']).is_file() for v in movie['variants'])
             movie['file'] = movie['variants'][0]['file']
             movie['poster'] = movie['variants'][0]['poster']
+            revision = movie['variants'][0].get('revision')
+            if revision:
+                movie['playback_src'] = movie['file'] + '?v=' + revision
+                movie['poster'] += '?v=' + revision
             movie['description_zh'] = '等值面与切片展示，可在同一播放时刻切换。'
             movie['description_en'] = 'Switch between isosurfaces and slices at the same playback time.'
         movies.append(movie)
@@ -79,7 +83,7 @@ def build():
     out.append('</div><span class="visually-hidden" id="filter-status" aria-live="polite"></span><div class="movie-grid">')
     for index, m in enumerate(movies):
         n=m['number']
-        out.append(f'<article class="movie-card" data-group="{m["group"]}" id="movie-{n}"><div class="media"><video class="inline-video" controls playsinline preload="none" src="{ESC(m["file"])}" poster="{ESC(m["poster"])}"></video><p class="video-error" role="status" hidden>'+span("视频暂时无法播放，请确认视频文件仍在本目录。", "The video could not be played. Check that its file is still in this folder.")+'</p></div><div class="movie-body"><div class="movie-meta">'+span(f"补充视频 {n}",f"Supplementary Movie {n}",attrs='class="movie-id"')+f'<span>{m["duration"]} s</span></div>'+span(m['zh'],m['en'],"h3")+span(m['description_zh'],m['description_en'],"p",'class="movie-description"')+'<div class="movie-actions">'+f'<button type="button" class="action primary" data-play-movie="{index}">播放预览</button>'+f'<button type="button" class="action" data-open-movie="{index}" aria-haspopup="dialog">'+span("放大播放 ↗", "Enlarge player ↗")+'</button></div></div></article>')
+        out.append(f'<article class="movie-card" data-group="{m["group"]}" id="movie-{n}"><div class="media"><video class="inline-video" controls playsinline preload="none" src="{ESC(m.get("playback_src",m["file"]))}" poster="{ESC(m["poster"])}"></video><p class="video-error" role="status" hidden>'+span("视频暂时无法播放，请确认视频文件仍在本目录。", "The video could not be played. Check that its file is still in this folder.")+'</p></div><div class="movie-body"><div class="movie-meta">'+span(f"补充视频 {n}",f"Supplementary Movie {n}",attrs='class="movie-id"')+f'<span>{m["duration"]} s</span></div>'+span(m['zh'],m['en'],"h3")+span(m['description_zh'],m['description_en'],"p",'class="movie-description"')+'<div class="movie-actions">'+f'<button type="button" class="action primary" data-play-movie="{index}">播放预览</button>'+f'<button type="button" class="action" data-open-movie="{index}" aria-haspopup="dialog">'+span("放大播放 ↗", "Enlarge player ↗")+'</button></div></div></article>')
     out.append('</div></section></div><section class="interactive-section" id="interactives"><div class="container"><div class="section-heading">'+span("核心交互组件", "Interactive experiments", "h2")+span("选择一个案例，自由查看观测、重建和时空演化。", "Choose an experiment to explore observations, reconstruction and evolution.", "p")+'</div><div class="component-grid">')
     for symbol,zh,en,dzh,den,file in components:
         out.append(f'<a class="component" href="{file}"><span class="component-symbol" aria-hidden="true">{symbol}</span><div>'+span(zh,en,"h3")+span(dzh,den,"p")+'</div><span class="component-arrow" aria-hidden="true">→</span></a>')

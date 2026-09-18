@@ -19,6 +19,8 @@
   const movieTitle = movie => language === 'zh' ? movie.zh : movie.en;
   const label = n => text(`补充视频 ${n}`,`Supplementary Movie ${n}`);
   const variantFor = index => movies[index].variants?.find(v=>v.id===selectedVariants.get(index)) || movies[index].variants?.[0] || movies[index];
+  const mediaURL = variant => variant.file + (variant.revision ? `?v=${encodeURIComponent(variant.revision)}` : '');
+  const posterURL = variant => variant.poster + (variant.revision ? `?v=${encodeURIComponent(variant.revision)}` : '');
   function variantControls(index, location) {
     const variants=movies[index].variants;
     if(!variants)return null;
@@ -26,7 +28,7 @@
     const choices=document.createElement('div');choices.className='variant-choices';choices.setAttribute('role','group');choices.dataset.ariaZh='三维声场显示方式';choices.dataset.ariaEn='3D field visualization';
     for(const v of variants){const button=document.createElement('button');button.type='button';button.dataset.variant=v.id;button.dataset.zh=v.zh;button.dataset.en=v.en;button.addEventListener('click',()=>switchVariant(index,v.id,location));choices.append(button)}
     wrapper.append(choices);
-    if(location==='card'){const downloads=document.createElement('div');downloads.className='variant-downloads';for(const v of variants){const link=document.createElement('a');link.href=v.file;link.download=v.file;link.dataset.zh=`下载${v.zh}版`;link.dataset.en=`Download ${v.en.toLowerCase()}`;downloads.append(link)}wrapper.append(downloads)}
+    if(location==='card'){const downloads=document.createElement('div');downloads.className='variant-downloads';for(const v of variants){const link=document.createElement('a');link.href=mediaURL(v);link.download=v.file;link.dataset.zh=`下载${v.zh}版`;link.dataset.en=`Download ${v.en.toLowerCase()}`;downloads.append(link)}wrapper.append(downloads)}
     return wrapper;
   }
   function updateVariants(){document.querySelectorAll('[data-variant-movie]').forEach(group=>{const index=Number(group.dataset.variantMovie),chosen=variantFor(index).id;group.querySelectorAll('[data-variant]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.variant===chosen)))});}
@@ -36,7 +38,7 @@
     const resume=Number.isFinite(source.currentTime)?source.currentTime:(positions.get(index)||0),playing=!source.paused;
     positions.set(index,resume);selectedVariants.set(index,id);
     const video=previews[index],variant=variantFor(index),token=(previewGenerations.get(video)||0)+1;
-    previewGenerations.set(video,token);video.pause();video.src=variant.file;video.poster=variant.poster;
+    previewGenerations.set(video,token);video.pause();video.src=mediaURL(variant);video.poster=posterURL(variant);
     video.addEventListener('loadedmetadata',()=>{if(previewGenerations.get(video)!==token)return;video.currentTime=Math.min(resume,Math.max(0,video.duration-.01));if(playing&&!inDialog)video.play().catch(()=>{});},{once:true});video.load();
     if(inDialog){player.pause();loadMovie(index,playing)}
     updateVariants();
@@ -62,7 +64,7 @@
     document.getElementById('next-movie').disabled = active === movies.length - 1;
     player.setAttribute('aria-label',label(movie.number)+': '+movieTitle(movie));
     const download = document.getElementById('download-movie');
-    download.href = variantFor(active).file;
+    download.href = mediaURL(variantFor(active));
     download.download = variantFor(active).file;
     const existing=document.getElementById('dialog-variants');
     if(existing)existing.remove();
@@ -104,8 +106,8 @@
     active = index;
     updatePlayerTitle();
     document.getElementById('player-error').hidden = true;
-    player.poster = variantFor(index).poster;
-    player.src = variantFor(index).file;
+    player.poster = posterURL(variantFor(index));
+    player.src = mediaURL(variantFor(index));
     const resume = positions.get(index) || 0;
     player.addEventListener('loadedmetadata',() => {
       if (token !== generation || !dialog.open) return;

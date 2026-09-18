@@ -62,7 +62,9 @@
       "title_en": "MeshRIR 3D Acoustic Field",
       "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
       "duration_s": 45.667,
-      "sha256": "98b238bed4f0fb04b9d2701596e9b5f65e55190d55fad0a949291a225cd43fef",
+      "sha256": "970b3fd57394fb8b7d3ac8bad7fe92fdda2230cc45133d6d2196ad05590d9199",
+      "bytes": 15281263,
+      "source_remote_video": "/media/zzy/raid5/HILDA_NCS/results/meshrir_isosurfaces_white_series_20260918/output/Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
       "poster": "assets/posters/movie-7-isosurfaces.png",
       "default_variant": "isosurfaces",
       "variants": [
@@ -72,8 +74,9 @@
           "en": "Isosurfaces",
           "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
           "poster": "assets/posters/movie-7-isosurfaces.png",
-          "sha256": "98b238bed4f0fb04b9d2701596e9b5f65e55190d55fad0a949291a225cd43fef",
-          "duration_s": 45.666666666666664
+          "sha256": "970b3fd57394fb8b7d3ac8bad7fe92fdda2230cc45133d6d2196ad05590d9199",
+          "duration_s": 45.666666666666664,
+          "revision": "20260918-white"
         },
         {
           "id": "slices",

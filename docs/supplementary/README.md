@@ -16,6 +16,8 @@ The catalogue keeps the numbered sequence used in the manuscript. Movie 6 is the
 
 ### MeshRIR: isosurfaces and slices
 
+The isosurface movie uses the collection's white background, Arial typography, yellow case label and three-column layout. Its title, time display and coordinate labels match the original MeshRIR movie.
+
 Movie 7 and the [3D viewer](MeshRIR_3D_interactive.html) open in **Isosurfaces** mode. Switch to **Slices** to inspect the same recorded time. The movie switch retains playback position and pause state; the interactive switch also retains rotation and zoom. Separate video downloads are available on the Movie 7 card. The [original standalone slice viewer](MeshRIR_3D_slices_legacy.html) is preserved.
 
 All 1,024 samples from 0 to 63.9375 ms are retained. The three panels show all 64 interior measurements, APCE reconstruction and measured reference on the 21 × 21 × 9 grid. Reconstruction also uses 128 boundary measurements. Isosurfaces use fixed pressure levels ±0.001, ±0.002 and ±0.004 in the data's arbitrary units; observed pressure and slice colours use a fixed ±0.02 scale with saturation tips. Surfaces are extracted from the original grid without smoothing pressure or geometry. Positive and negative surfaces can be toggled independently, and **Paper view** restores the camera used in the figure.
