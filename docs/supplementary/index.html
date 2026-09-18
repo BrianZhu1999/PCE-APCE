@@ -105,7 +105,7 @@
   function switchVariant(index,id,location){
     if(variantFor(index).id===id)return;
     const inDialog=active===index&&dialog.open,source=inDialog?player:previews[index];
-    const resume=Number.isFinite(source.currentTime)?source.currentTime:(positions.get(index)||0),playing=!source.paused;
+    const resume=source.readyState>0&&Number.isFinite(source.currentTime)?source.currentTime:(positions.get(index)||0),playing=!source.paused;
     positions.set(index,resume);selectedVariants.set(index,id);
     const video=previews[index],variant=variantFor(index),token=(previewGenerations.get(video)||0)+1;
     previewGenerations.set(video,token);video.pause();video.src=mediaURL(variant);video.poster=posterURL(variant);
@@ -156,7 +156,7 @@
     video.addEventListener('play',() => {pauseOthers(video);updatePreviewButton(index);});
     video.addEventListener('pause',()=>updatePreviewButton(index));
     video.addEventListener('ended',()=>updatePreviewButton(index));
-    video.addEventListener('timeupdate',()=>positions.set(index,video.currentTime));
+    video.addEventListener('timeupdate',()=>{if(video.readyState>0)positions.set(index,video.currentTime);});
     video.addEventListener('error',()=>showVideoError(video,cards[index].querySelector('.video-error')));
     video.addEventListener('loadeddata',()=>{cards[index].querySelector('.video-error').hidden=true;});
   });
@@ -168,7 +168,7 @@
   player.addEventListener('error',()=>showVideoError(player,document.getElementById('player-error')));
   player.addEventListener('loadeddata',()=>{document.getElementById('player-error').hidden=true;});
   function savePosition() {
-    if (active >= 0 && Number.isFinite(player.currentTime)) positions.set(active,player.currentTime);
+    if (active >= 0 && player.readyState>0 && Number.isFinite(player.currentTime)) positions.set(active,player.currentTime);
   }
   function loadMovie(index, autoplay=true) {
     generation += 1;
