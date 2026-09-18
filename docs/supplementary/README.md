@@ -12,7 +12,7 @@ This folder accompanies the **PCE–APCE** method for dynamic assimilation under
 - `catalog.json` — machine-readable titles, routes, source notes and verification fields.
 - `code/` — deterministic page builder and the local CSS/JavaScript sources.
 
-The catalogue keeps the numbered sequence used in the manuscript. Movie 6 is the archived VIV–PIV movie supplied with the earlier five-regime presentation; the interactive VIV–PIV component is the current 751-observation view. These are labelled separately so the two records are not conflated.
+The eight numbered movies accompany the corresponding Results sections. Movie 6 and the VIV–PIV interactive component use the paper-matched five-regime configuration: 751 spatial measurement locations and 1,502 scalar velocity observations.
 
 ### MeshRIR: isosurfaces and slices
 
@@ -23,6 +23,29 @@ Movie 7 and the [3D viewer](MeshRIR_3D_interactive.html) open in **Isosurfaces**
 All 1,024 samples from 0 to 63.9375 ms are retained. The three panels show all 64 interior measurements, APCE reconstruction and measured reference on the 21 × 21 × 9 grid. Reconstruction also uses 128 boundary measurements. Isosurfaces use fixed pressure levels ±0.001, ±0.002 and ±0.004 in the data's arbitrary units; observed pressure and slice colours use a fixed ±0.02 scale with saturation tips. Surfaces are extracted from the original grid without smoothing pressure or geometry. Positive and negative surfaces can be toggled independently, and **Paper view** restores the camera used in the figure.
 
 For offline use, keep `MeshRIR_3D_interactive.html` together with the **entire `meshrir_isosurface_data/` folder**. Surface files load by time segment; playback retains every recorded sample and may slow while loading on a slow device or connection. The archived slice viewer remains a single HTML file. Movie playback is 24 samples per second, with the same two-second title and one-second final hold in both versions.
+
+## Movies and corresponding results
+
+| Movie | Subject | Paper correspondence |
+|---|---|---|
+| 1 | Three Classical Uncertain Equations | Results 2.2; Fig. 2 |
+| 2 | Five ODE Systems | Results 2.3; Fig. 3 |
+| 3 | Lorenz–96 Dynamics | Results 2.4; Fig. 4 |
+| 4 | Kuramoto–Sivashinsky Equation | Results 2.4; Fig. 4 |
+| 5 | Kolmogorov Turbulent Flow | Results 2.4; Fig. 4 |
+| 6 | VIV–PIV Experiment | Results 2.5; Fig. 5 |
+| 7 | MeshRIR 3D Acoustic Field | Results 2.5; Extended Data Fig. 1 |
+| 8 | Acoustic Source Localization and Trajectory Tracking | Results 2.5; Extended Data Fig. 2 and Supplementary Note 17 |
+
+Movie 7 follows reconstruction over the observation window, 0–63.9375 ms. The 65-ms observation-free forecast illustrated in Fig. 1d is a separate view.
+
+## Interactive visualizations
+
+The sensor/blackout, VIV–PIV, MeshRIR and source-tracking viewers expose the corresponding observations and reconstructed states. The APCE inspector shows Lorenz–96 and Kuramoto–Sivashinsky candidate weights, normalized entropy, parameter estimates and one state coordinate. Its time control opens at the first valid posterior; unavailable initial entries are displayed as missing values.
+
+The calibration and runtime atlases summarize **210 development records**. The cross-case atlas shows a **descriptive single-seed comparison across 18 cases at observation-interval factors 1 and 8**. These exploratory views retain their own case and sampling definitions. The paper reports its statistical comparisons in the Results and Supplementary tables.
+
+For offline VIV–PIV viewing, keep `VIV_PIV_5regimes_interactive.html` with its `viv_piv_data/` folder. The viewer loads one regime at a time and shows loading progress. This preserves the original displayed fields and spectra while reducing the first-page transfer.
 
 ## Rebuild locally
 
@@ -38,7 +61,7 @@ The builder reads `catalog.json` (falling back to the legacy `collection_manifes
 
 本目录是 PCE–APCE 动态同化方法的补充材料入口。视频展示完整的场重建和中断后预测过程，交互组件用于查看观测布局、状态估计和不确定性。页面默认英文，可用右上角按钮切换中文，选择会保存在浏览器中。
 
-目录中的编号与论文保持一致。第 6 部补充视频保留早期五工况 VIV–PIV 展示，VIV–PIV 交互组件对应当前 751 个观测点的版本，页面已分别标注。
+目录编号与论文正文中的引用一致。视频6与VIV–PIV交互组件均使用现稿五工况配置：751个空间观测点、1502个速度分量观测。
 
 ## Citation
 

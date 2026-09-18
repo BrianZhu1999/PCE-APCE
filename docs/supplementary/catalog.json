@@ -2,7 +2,7 @@
   "schema_version": "1.1",
   "title": "PCE-APCE supplementary media",
   "repository": "https://github.com/BrianZhu1999/PCE-APCE",
-  "generated": "2026-09-18",
+  "generated": "2026-09-19",
   "default_language": "en",
   "languages": [
     "en",
@@ -53,9 +53,13 @@
       "number": 6,
       "title_en": "VIV–PIV Experiment",
       "file": "Supplementary_Movie_6_VIV_PIV.mp4",
-      "duration_s": 168.667,
-      "sha256": "f23e18fdc8797e01b53f39707b355bbb52b0083d44d58e0d60bbfa87cc238300",
-      "poster": "assets/posters/movie-6.png"
+      "duration_s": 168.66666666666666,
+      "sha256": "302347c029527d5b009c99851483decd5fdb5d1c7acbcd69857f5527cd4e46bc",
+      "poster": "assets/posters/movie-6.png",
+      "bytes": 95621957,
+      "revision": "20260919-751",
+      "spatial_observations": 751,
+      "scalar_observations": 1502
     },
     {
       "number": 7,
@@ -103,15 +107,20 @@
       "file": "Supplementary_Sensor_Blackout_Explorer.html",
       "title": "Sparse observation and blackout explorer",
       "scope": "Observations, sensors and post-blackout forecasts",
-      "sha256": "490120ac696a2c85afa3c661d83c26b46cc30c60bedc675129ced3247dda3d1e",
+      "sha256": "51de2da848c1041028a5e41a16cdca92ce0c8d7f5d2970b53943d606620ea6f4",
       "data_dependencies": []
     },
     {
       "file": "VIV_PIV_5regimes_interactive.html",
       "title": "VIV-PIV five-regime explorer",
       "scope": "Sparse PIV observations, reconstructed wakes and spectra",
-      "sha256": "c2ea3fe1018171fe50cc74781464bc809b47de4b0f8492bf135178a86edf27e1",
-      "data_dependencies": []
+      "sha256": "b4b1485806b74cea4ce4206460ef6acf3604102a1823a159c38c1596b3ecdd0b",
+      "data_dependencies": [
+        "viv_piv_data/"
+      ],
+      "revision": "20260919",
+      "spatial_observations": 751,
+      "scalar_observations": 1502
     },
     {
       "file": "MeshRIR_3D_interactive.html",
@@ -139,14 +148,15 @@
       "file": "Supplementary_APCE_Inspector.html",
       "title": "APCE mechanism inspector",
       "scope": "Candidate weights, entropy and alpha estimates",
-      "sha256": "8fe89f1ed8943aad9566462968e05224bc69ea8a808f053a2dbb47ad53f18fa7",
-      "data_dependencies": []
+      "sha256": "cedaf8f97ced095c229734fb7ad80289a59b191586ace9354b817177ff67e2c0",
+      "data_dependencies": [],
+      "revision": "20260919"
     },
     {
       "file": "Supplementary_FullRun_Calibration_Atlas.html",
       "title": "Full-run calibration atlas",
       "scope": "Recorded parameter and uncertainty metrics across 210 development rows",
-      "sha256": "b44cda4c1efc0eeacb3e8cc29a5f33bc2818f7159106a6a4251bb1a2c5ca4715",
+      "sha256": "aa8540c981a3887aa53fcf02a828f6a7a19414c5c0ccc848d4372bc0ae2bc16f",
       "data_dependencies": [
         "Supplementary_Calibration_Display.csv",
         "metadata/calibration.json"
@@ -156,7 +166,7 @@
       "file": "Supplementary_Runtime_Pareto.html",
       "title": "Runtime and forecast atlas",
       "scope": "Recorded runtime and forecast skill within each case",
-      "sha256": "d908b55ea7e5717ae8f49a071c250586955913bc4e90fe23584cbe5e6f4d4434",
+      "sha256": "ed109561978ffa7a8dceaa40830250057232f05ad908fdaa9a1d3bf7045298c1",
       "data_dependencies": [
         "Supplementary_Runtime_Display.csv",
         "metadata/runtime.json"
@@ -166,7 +176,7 @@
       "file": "Supplementary_CrossCase_ForecastSource_Atlas.html",
       "title": "Cross-case forecast-source atlas",
       "scope": "Descriptive paired comparison across 18 cases",
-      "sha256": "9a3c76f4b6d5c5f556295dd3f88a5a4ecd86e7a885d593af1732cc85258f1f4d",
+      "sha256": "4dc258a6171926657de1f5a865d13f1f7b16c636d76bf2dfd152ade266c9a9dd",
       "data_dependencies": [
         "CrossCase_ForecastSource_Display.csv",
         "metadata/cross-case.json"
@@ -174,8 +184,10 @@
     }
   ],
   "notes": {
-    "movie_6": "Archived five-regime VIV-PIV movie: 745 spatial points and 1,490 scalar observations. The VIV-PIV interactive viewer uses the current 751-point / 1,502-scalar x40y20 formal configuration.",
-    "atlas_scope": "Calibration and runtime atlas: 210 recorded development rows. Cross-case forecast-source atlas: 18-case descriptive aggregate.",
-    "integrity": "Media hashes match the verified desktop delivery collection; component hashes refer to this public copy after relative metadata links were made portable."
+    "movie_6": "The movie and interactive viewer use the paper-matched five-regime x40y20 configuration: 751 spatial measurement locations and 1,502 scalar velocity observations.",
+    "atlas_scope": "Calibration and runtime atlas: 210 development records. Cross-case forecast-source atlas: a descriptive single-seed comparison across 18 cases at observation-interval factors 1 and 8.",
+    "integrity": "Hashes identify the files in this collection. Public text hashes use the LF line endings stored by Git; media hashes identify exact MP4 bytes.",
+    "movie_7": "The isosurface and slice views show reconstruction over 0–63.9375 ms. This observation window corresponds to Extended Data Fig. 1; the 65-ms forecast in Figure 1d is a separate view.",
+    "apce_inspector": "Candidate weights, normalized entropy, alpha estimates and one state coordinate for Lorenz–96 and Kuramoto–Sivashinsky."
   }
 }

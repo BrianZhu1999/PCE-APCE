@@ -691,12 +691,13 @@
   ],
   "movie": {
     "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
-    "sha256": "98b238bed4f0fb04b9d2701596e9b5f65e55190d55fad0a949291a225cd43fef",
+    "sha256": "970b3fd57394fb8b7d3ac8bad7fe92fdda2230cc45133d6d2196ad05590d9199",
     "frames": 1096,
     "fps": 24,
     "title_frames": 48,
     "data_frames": 1024,
     "hold_frames": 24
   },
-  "scientific_recomputation": false
+  "scientific_recomputation": false,
+  "metadata_updated": "2026-09-19"
 }

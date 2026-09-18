@@ -42,6 +42,13 @@ def build():
         assert delivery_file and (ROOT / poster).is_file() and (ROOT / delivery_file).is_file()
         duration = f'{e["duration_s"]:.2f}'.rstrip("0").rstrip(".")
         movie = dict(number=number, zh=zh, en=en, description_zh=desc_zh, description_en=desc_en, group=group, file=delivery_file, poster=poster, duration=duration)
+        revision = e.get('revision')
+        if revision:
+            movie['playback_src'] = movie['file'] + '?v=' + revision
+            movie['poster'] += '?v=' + revision
+        if number == 6:
+            movie['description_zh'] = '751 个观测点，五个约化速度工况下的速度分量与速率重建。'
+            movie['description_en'] = 'Velocity-component and speed reconstruction from 751 measurement locations across five regimes.'
         if number == 7:
             movie['variants'] = e['variants']
             assert all((ROOT / v['file']).is_file() and (ROOT / v['poster']).is_file() for v in movie['variants'])
@@ -62,10 +69,10 @@ def build():
         ("XYZ", "声源定位与轨迹跟踪", "Source localization & tracking", "查看单源、双源和三源的三维轨迹与不确定度。", "Explore 3D trajectories and uncertainty for one, two and three sources.", "Baoding_Tracking_3D_interactive.html"),
     ]
     diagnostics = [
-        ("APCE 机制检查器", "APCE mechanism inspector", "候选权重、熵、α 估计与配对预测。", "Candidate weights, entropy, α estimates and paired forecasts.", "Supplementary_APCE_Inspector.html"),
-        ("全运行校准图谱", "Full-run calibration", "参数误差、预测误差、覆盖率与区间宽度。", "Parameter error, forecast error, coverage and interval width.", "Supplementary_FullRun_Calibration_Atlas.html"),
-        ("运行代价与预测效果", "Runtime & forecast skill", "比较各案例中记录的运行时间与预测误差。", "Compare recorded runtime and forecast error within each case.", "Supplementary_Runtime_Pareto.html"),
-        ("跨案例预测来源", "Cross-case forecast sources", "比较 18 个案例在不同观测频率下的预测来源。", "Compare forecast sources across 18 cases and observation frequencies.", "Supplementary_CrossCase_ForecastSource_Atlas.html"),
+        ("APCE 机制检查器", "APCE mechanism inspector", "Lorenz–96 与 KSE 的候选权重、熵和 α 估计。", "Candidate weights, entropy and α estimates for Lorenz–96 and KSE.", "Supplementary_APCE_Inspector.html"),
+        ("全运行校准图谱", "Full-run calibration", "浏览 210 条开发试验记录的参数误差、预测误差与区间校准。", "Parameter error, forecast error and interval calibration across 210 development records.", "Supplementary_FullRun_Calibration_Atlas.html"),
+        ("运行代价与预测效果", "Runtime & forecast skill", "浏览 210 条开发试验记录中各案例的运行时间与预测误差。", "Runtime and forecast error within each case across 210 development records.", "Supplementary_Runtime_Pareto.html"),
+        ("跨案例预测来源", "Cross-case forecast sources", "18 个案例在观测间隔因子 1 和 8 下的单种子描述性比较。", "Descriptive single-seed comparisons across 18 cases at interval factors 1 and 8.", "Supplementary_CrossCase_ForecastSource_Atlas.html"),
     ]
     assert all((ROOT / c[-1]).is_file() for c in components + diagnostics)
     css = (CODE / "collection_portal.css").read_text(encoding="utf-8")
