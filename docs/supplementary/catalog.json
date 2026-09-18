@@ -114,7 +114,7 @@
       "file": "VIV_PIV_5regimes_interactive.html",
       "title": "VIV-PIV five-regime explorer",
       "scope": "Sparse PIV observations, reconstructed wakes and spectra",
-      "sha256": "b4b1485806b74cea4ce4206460ef6acf3604102a1823a159c38c1596b3ecdd0b",
+      "sha256": "966ddedfc4daed386f8120aa1c4f1795776ef791b0df576acd3cee030c1b51ee",
       "data_dependencies": [
         "viv_piv_data/"
       ],
@@ -148,7 +148,7 @@
       "file": "Supplementary_APCE_Inspector.html",
       "title": "APCE mechanism inspector",
       "scope": "Candidate weights, entropy and alpha estimates",
-      "sha256": "cedaf8f97ced095c229734fb7ad80289a59b191586ace9354b817177ff67e2c0",
+      "sha256": "f9486e2d719ed6e24fb3bae7fac0fd3eff1f50d1931f867d6cd40e5454111815",
       "data_dependencies": [],
       "revision": "20260919"
     },
