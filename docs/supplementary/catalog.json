@@ -2,7 +2,7 @@
   "schema_version": "1.1",
   "title": "PCE-APCE supplementary media",
   "repository": "https://github.com/BrianZhu1999/PCE-APCE",
-  "generated": "2026-09-19",
+  "generated": "2026-09-24",
   "default_language": "en",
   "languages": [
     "en",
@@ -151,41 +151,11 @@
       "sha256": "f9486e2d719ed6e24fb3bae7fac0fd3eff1f50d1931f867d6cd40e5454111815",
       "data_dependencies": [],
       "revision": "20260919"
-    },
-    {
-      "file": "Supplementary_FullRun_Calibration_Atlas.html",
-      "title": "Full-run calibration atlas",
-      "scope": "Recorded parameter and uncertainty metrics across 210 development rows",
-      "sha256": "aa8540c981a3887aa53fcf02a828f6a7a19414c5c0ccc848d4372bc0ae2bc16f",
-      "data_dependencies": [
-        "Supplementary_Calibration_Display.csv",
-        "metadata/calibration.json"
-      ]
-    },
-    {
-      "file": "Supplementary_Runtime_Pareto.html",
-      "title": "Runtime and forecast atlas",
-      "scope": "Recorded runtime and forecast skill within each case",
-      "sha256": "ed109561978ffa7a8dceaa40830250057232f05ad908fdaa9a1d3bf7045298c1",
-      "data_dependencies": [
-        "Supplementary_Runtime_Display.csv",
-        "metadata/runtime.json"
-      ]
-    },
-    {
-      "file": "Supplementary_CrossCase_ForecastSource_Atlas.html",
-      "title": "Cross-case forecast-source atlas",
-      "scope": "Descriptive paired comparison across 18 cases",
-      "sha256": "4dc258a6171926657de1f5a865d13f1f7b16c636d76bf2dfd152ade266c9a9dd",
-      "data_dependencies": [
-        "CrossCase_ForecastSource_Display.csv",
-        "metadata/cross-case.json"
-      ]
     }
   ],
   "notes": {
     "movie_6": "The movie and interactive viewer use the paper-matched five-regime x40y20 configuration: 751 spatial measurement locations and 1,502 scalar velocity observations.",
-    "atlas_scope": "Calibration and runtime atlas: 210 development records. Cross-case forecast-source atlas: a descriptive single-seed comparison across 18 cases at observation-interval factors 1 and 8.",
+    "atlas_scope": "Archived diagnostic views remain in the research record and are not part of the public delivery.",
     "integrity": "Hashes identify the files in this collection. Public text hashes use the LF line endings stored by Git; media hashes identify exact MP4 bytes.",
     "movie_7": "The isosurface and slice views show reconstruction over 0–63.9375 ms. This observation window corresponds to Extended Data Fig. 1; the 65-ms forecast in Figure 1d is a separate view.",
     "apce_inspector": "Candidate weights, normalized entropy, alpha estimates and one state coordinate for Lorenz–96 and Kuramoto–Sivashinsky."

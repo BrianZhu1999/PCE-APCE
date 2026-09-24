@@ -70,20 +70,18 @@ def build():
     ]
     diagnostics = [
         ("APCE 机制检查器", "APCE mechanism inspector", "Lorenz–96 与 KSE 的候选权重、熵和 α 估计。", "Candidate weights, entropy and α estimates for Lorenz–96 and KSE.", "Supplementary_APCE_Inspector.html"),
-        ("全运行校准图谱", "Full-run calibration", "浏览 210 条开发试验记录的参数误差、预测误差与区间校准。", "Parameter error, forecast error and interval calibration across 210 development records.", "Supplementary_FullRun_Calibration_Atlas.html"),
-        ("运行代价与预测效果", "Runtime & forecast skill", "浏览 210 条开发试验记录中各案例的运行时间与预测误差。", "Runtime and forecast error within each case across 210 development records.", "Supplementary_Runtime_Pareto.html"),
-        ("跨案例预测来源", "Cross-case forecast sources", "18 个案例在观测间隔因子 1 和 8 下的单种子描述性比较。", "Descriptive single-seed comparisons across 18 cases at interval factors 1 and 8.", "Supplementary_CrossCase_ForecastSource_Atlas.html"),
     ]
     assert all((ROOT / c[-1]).is_file() for c in components + diagnostics)
+    interactive_count = len(components) + len(diagnostics)
     css = (CODE / "collection_portal.css").read_text(encoding="utf-8")
     js = (CODE / "collection_portal.js").read_text(encoding="utf-8")
     out = [f'<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Supplementary movies and interactive experiments for paired cumulative predictive evidence (PCE) and adaptive PCE."><title>Supplementary Movies</title><style>\n{css}\n</style></head><body>']
     out.append('<a class="skip" href="#movies">'+span("跳到视频", "Skip to videos")+'</a>')
     out.append('<header class="masthead"><div class="container masthead-inner"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">PCE</span><div>'+span("补充材料", "Supplements", attrs='class="brand-name"')+span("视频与交互演示", "Movies & interactives", attrs='class="brand-caption"')+'</div></a><nav class="navigation" data-aria-zh="页面导航" data-aria-en="Page navigation">')
-    for anchor, zh, en in [("movies", "视频案例", "Movies"), ("interactives", "交互组件", "Interactives"), ("diagnostics", "校准与来源", "Calibration")]:
+    for anchor, zh, en in [("movies", "视频案例", "Movies"), ("interactives", "交互组件", "Interactives"), ("diagnostics", "方法机制", "Method mechanisms")]:
         out.append(f'<a href="#{anchor}">'+span(zh,en)+'</a>')
     out.append('</nav><div class="language" id="lang-switcher" role="group" data-aria-zh="页面语言" data-aria-en="Page language"><button type="button" data-language="zh" aria-pressed="false">'+span("中文","Chinese")+'</button><button type="button" data-language="en" aria-pressed="true">English</button></div></div></header>')
-    out.append('<main id="top"><div class="container"><section class="intro"><div><div class="intro-label">'+span("补充材料", "SUPPLEMENTARY MATERIALS")+'</div>'+span("动态重建与不确定性", "Dynamic reconstruction & uncertainty", "h1")+span("从稀疏观测到中断预测，浏览动力系统、湍流与声场实验。", "Explore sparse reconstruction and post-blackout forecasting across dynamical systems, turbulent flow and acoustics.", "p", 'class="intro-lead"')+'<div class="collection-facts"><span><b>8</b>'+span("部补充视频", "supplementary movies")+'</span><span><b>8</b>'+span("个交互组件", "interactive components")+'</span><a href="#interactives">'+span("探索交互组件 →", "Explore interactives →")+'</a></div></div><aside class="intro-aside">'+span("本页汇集 APCE 方法的可复现实验演示：视频展示时间演化，交互组件用于检查观测、重建和不确定度。", "A compact, reproducible view of APCE: videos show temporal evolution; interactive components expose observations, reconstructions and uncertainty.", "p")+'<a href="https://github.com/BrianZhu1999/PCE-APCE" target="_blank" rel="noreferrer">'+span("访问 APCE 项目 ↗", "Open the APCE repository ↗")+'</a></aside></section>')
+    out.append('<main id="top"><div class="container"><section class="intro"><div><div class="intro-label">'+span("补充材料", "SUPPLEMENTARY MATERIALS")+'</div>'+span("动态重建与不确定性", "Dynamic reconstruction & uncertainty", "h1")+span("从稀疏观测到中断预测，浏览动力系统、湍流与声场实验。", "Explore sparse reconstruction and post-blackout forecasting across dynamical systems, turbulent flow and acoustics.", "p", 'class="intro-lead"')+'<div class="collection-facts"><span><b>8</b>'+span("部补充视频", "supplementary movies")+f'</span><span><b>{interactive_count}</b>'+span("个交互组件", "interactive components")+'</span><a href="#interactives">'+span("探索交互组件 →", "Explore interactives →")+'</a></div></div><aside class="intro-aside">'+span("本页汇集 APCE 方法的可复现实验演示：视频展示时间演化，交互组件用于检查观测、重建和不确定度。", "A compact, reproducible view of APCE: videos show temporal evolution; interactive components expose observations, reconstructions and uncertainty.", "p")+'<a href="https://github.com/BrianZhu1999/PCE-APCE" target="_blank" rel="noreferrer">'+span("访问 APCE 项目 ↗", "Open the APCE repository ↗")+'</a></aside></section>')
     out.append('<section class="section" id="movies"><div class="section-heading">'+span("视频案例", "Supplementary movies", "h2")+span("可在卡片内直接播放；放大后点击「关闭播放器」或按 Esc 返回。", "Play directly in a card, or enlarge it. Close the player or press Esc to return.", "p")+'</div><div class="filters" role="group" data-aria-zh="筛选视频类别" data-aria-en="Filter movie categories">')
     for key,zh,en in [("all","全部视频","All movies"),("dynamics","动力系统","Dynamical systems"),("flow","湍流与流动","Turbulent flow"),("acoustics","声场与跟踪","Acoustics & tracking")]:
         out.append(f'<button type="button" data-filter="{key}" aria-pressed="{str(key=="all").lower()}">'+span(zh,en)+'</button>')
@@ -94,7 +92,7 @@ def build():
     out.append('</div></section></div><section class="interactive-section" id="interactives"><div class="container"><div class="section-heading">'+span("核心交互组件", "Interactive experiments", "h2")+span("选择一个案例，自由查看观测、重建和时空演化。", "Choose an experiment to explore observations, reconstruction and evolution.", "p")+'</div><div class="component-grid">')
     for symbol,zh,en,dzh,den,file in components:
         out.append(f'<a class="component" href="{file}"><span class="component-symbol" aria-hidden="true">{symbol}</span><div>'+span(zh,en,"h3")+span(dzh,den,"p")+'</div><span class="component-arrow" aria-hidden="true">→</span></a>')
-    out.append('</div></div></section><div class="container"><section class="section" id="diagnostics"><div class="section-heading">'+span("校准与来源", "Calibration & provenance", "h2")+span("从方法机制到跨案例对照，核查已有实验结果。", "Inspect existing results, from method mechanisms to comparisons across cases.", "p")+'</div><div class="diagnostic-grid">')
+    out.append('</div></div></section><div class="container"><section class="section" id="diagnostics"><div class="section-heading">'+span("方法机制", "Method mechanisms", "h2")+span("从方法机制到案例查看，核查已有实验结果。", "Inspect method mechanisms and case visualizations.", "p")+'</div><div class="diagnostic-grid">')
     for zh,en,dzh,den,file in diagnostics:
         out.append('<article class="diagnostic">'+span(zh,en,"h3")+span(dzh,den,"p")+f'<a href="{file}">'+span("查看组件 →", "Open component →")+'</a></article>')
     out.append('</div></section><footer class="footer">'+span("科研补充材料", "Research supplements")+'<div class="footer-links"><a href="README.md">'+span("文件说明", "README")+'</a><a href="catalog.json">'+span("来源与校验", "Sources & verification")+'</a><a href="#top">'+span("返回顶部 ↑", "Back to top ↑")+'</a></div></footer></div></main>')
@@ -102,7 +100,7 @@ def build():
     out.append('<script type="application/json" id="movie-data">'+json.dumps(movies,ensure_ascii=False).replace('</','<\/')+'</script>')
     out.append('<script>\n'+js+'\n</script></body></html>\n')
     (ROOT/'index.html').write_text('\n'.join(out),encoding='utf-8',newline='\n')
-    print(json.dumps({'file':'index.html','bytes':(ROOT/'index.html').stat().st_size,'movies':len(movies),'interactives':len(components)+len(diagnostics),'sha256':hashlib.sha256((ROOT/'index.html').read_bytes()).hexdigest()},ensure_ascii=False))
+    print(json.dumps({'file':'index.html','bytes':(ROOT/'index.html').stat().st_size,'movies':len(movies),'interactives':interactive_count,'sha256':hashlib.sha256((ROOT/'index.html').read_bytes()).hexdigest()},ensure_ascii=False))
 
 
 if __name__=='__main__':

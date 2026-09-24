@@ -43,8 +43,6 @@ Movie 7 follows reconstruction over the observation window, 0–63.9375 ms. The 
 
 The sensor/blackout, VIV–PIV, MeshRIR and source-tracking viewers expose the corresponding observations and reconstructed states. The APCE inspector shows Lorenz–96 and Kuramoto–Sivashinsky candidate weights, normalized entropy, parameter estimates and one state coordinate. Its time control opens at the first valid posterior; unavailable initial entries are displayed as missing values.
 
-The calibration and runtime atlases summarize **210 development records**. The cross-case atlas shows a **descriptive single-seed comparison across 18 cases at observation-interval factors 1 and 8**. These exploratory views retain their own case and sampling definitions. The paper reports its statistical comparisons in the Results and Supplementary tables.
-
 For offline VIV–PIV viewing, keep `VIV_PIV_5regimes_interactive.html` with its `viv_piv_data/` folder. The viewer loads one regime at a time and shows loading progress. This preserves the original displayed fields and spectra while reducing the first-page transfer.
 
 ## Rebuild locally

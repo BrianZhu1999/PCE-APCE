@@ -6,7 +6,7 @@ PCE and APCE provide a common evidence update for dynamic assimilation when cand
 
 <p><a href="https://brianzhu1999.github.io/PCE-APCE/supplementary/"><strong>Open the supplementary showcase</strong></a> · <a href="docs/supplementary/README.md">Browse the release files</a> · <a href="docs/reproduction.md">Reproduce the experiments</a> · <a href="CITATION.cff">Cite this software</a></p>
 
-The repository pairs the implementation with the benchmark procedures used in the accompanying manuscript and a compact, reader-facing collection of eight supplementary movies and eight self-contained HTML viewers. The media gallery is designed for inspection: each item states its case, purpose and evaluation setting, while the public catalogue records checksums and source details.
+The repository pairs the implementation with the benchmark procedures used in the accompanying manuscript and a compact, reader-facing collection of eight supplementary movies and five interactive HTML viewers. The media gallery is designed for inspection: each item states its case, purpose and evaluation setting, while the public catalogue records checksums and source details.
 
 ## What is here
 
@@ -20,7 +20,7 @@ The repository pairs the implementation with the benchmark procedures used in th
 | `docs/supplementary/` | Movies, interactive viewers and the public media catalogue |
 | `tests/` | Focused method and experiment-setting tests |
 
-The supplementary collection is an explanatory companion to the code. The Full-Run Calibration Atlas contains 210 recorded development rows, and the Cross-Case Forecast-Source Atlas contains an 18-case descriptive aggregate. These views preserve the recorded values and are intended for exploration; they are not a replacement for the manuscript's prespecified evaluations.
+The supplementary collection is an explanatory companion to the code, with reader-facing movies and case-specific interactive viewers.
 
 ## Installation
 

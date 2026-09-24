@@ -1,6 +1,6 @@
 # 补充视频与交互查看器
 
-本合集配套 PCE–APCE 论文，提供 8 部连续编号的视频和 8 个浏览器查看器。编号、首页和下载文件保持一致，便于论文引用。
+本合集配套 PCE–APCE 论文，提供 8 部连续编号的视频和 5 个浏览器查看器。编号、首页和下载文件保持一致，便于论文引用。
 
 ## 视频
 
@@ -29,11 +29,8 @@
 ### 方法与诊断查看器
 
 - [`Supplementary_APCE_Inspector.html`](Supplementary_APCE_Inspector.html)：查看候选权重、归一化熵和 APCE α 估计。
-- [`Supplementary_FullRun_Calibration_Atlas.html`](Supplementary_FullRun_Calibration_Atlas.html)：按案例和样本集浏览 210 条开发记录。
-- [`Supplementary_Runtime_Pareto.html`](Supplementary_Runtime_Pareto.html)：查看匹配样本集中的案例内运行时间中位数与预测 nRMSE。
-- [`Supplementary_CrossCase_ForecastSource_Atlas.html`](Supplementary_CrossCase_ForecastSource_Atlas.html)：探索 18 个案例的描述性预测来源汇总，保留正负值。
 
-MeshRIR 新版需要将 HTML 与完整的 `meshrir_isosurface_data/` 文件夹放在一起，离线打开时也应保持这种结构。原版单文件切片组件保存在 [`MeshRIR_3D_slices_legacy.html`](MeshRIR_3D_slices_legacy.html)。其他查看器将显示数据和脚本嵌入 HTML。若要保留图谱页面的 CSV 下载按钮和来源链接，请下载完整发布压缩包。
+MeshRIR 新版需要将 HTML 与完整的 `meshrir_isosurface_data/` 文件夹放在一起，离线打开时也应保持这种结构。原版单文件切片组件保存在 [`MeshRIR_3D_slices_legacy.html`](MeshRIR_3D_slices_legacy.html)。其他查看器将显示数据和脚本嵌入 HTML。
 
 ### MeshRIR 新旧显示方式
 
