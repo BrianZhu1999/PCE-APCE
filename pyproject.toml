@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paired-cumulative-predictive-evidence"
+version = "0.1.0"
+description = "Forecast-history separation for dynamical inference with paired cumulative predictive evidence"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = {file = "LICENSE"}
+authors = [{name = "Ziyuan Zhu"}]
+keywords = ["data assimilation", "dynamical inference", "predictive scoring", "forecast-history separation"]
+dependencies = [
+  "numpy>=1.26,<2.0",
+  "scipy>=1.11,<1.14",
+  "torch>=2.6,<3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+]
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+  "pce_assimilation*",
+  "benchmarks*",
+  "viv_piv*",
+  "acoustic_field_reconstruction*",
+  "acoustic_array_tracking*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"

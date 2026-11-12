@@ -1,0 +1,89 @@
+{
+  "description": "PCE/APCE settings used for the five applied ODE systems in the paper.",
+  "method_overrides": {
+    "pce": {
+      "pce_temperature": 0.66,
+      "evidence_shrinkage": 0.17,
+      "local_grid_points": 5,
+      "local_grid_topk": 1,
+      "local_grid_min_spacing": 0.002,
+      "state_weight_power": 6,
+      "state_map_blend": 1,
+      "state_map_blend_confidence_power": 0.5,
+      "state_point_estimator_mode": "weighted_mean",
+      "global_analysis_strength": 1,
+      "branch_member_alpha_jitter": 0.012,
+      "branch_member_alpha_jitter_confidence_power": 1,
+      "branch_augmented_alpha_analysis_strength": 0.6,
+      "global_augmented_alpha_analysis_strength": 0.25
+    },
+    "apce": {
+      "pce_temperature": 0.66,
+      "apce_temperature": 0.58,
+      "apce_min_temperature": 0.08,
+      "apce_forgetting": 0.995,
+      "apce_entropy_floor": 0.12,
+      "evidence_shrinkage": 0.17,
+      "local_grid_points": 5,
+      "local_grid_topk": 1,
+      "local_grid_min_spacing": 0.002,
+      "state_weight_power": 6,
+      "state_map_blend": 1,
+      "state_map_blend_confidence_power": 0.5,
+      "state_point_estimator_mode": "weighted_mean",
+      "global_analysis_strength": 1,
+      "branch_member_alpha_jitter": 0.012,
+      "branch_member_alpha_jitter_confidence_power": 1,
+      "branch_augmented_alpha_analysis_strength": 0.6,
+      "global_augmented_alpha_analysis_strength": 0.25
+    }
+  },
+  "case_overrides": {
+    "chemical": {
+      "both": {
+        "global_analysis_confidence_power": 2
+      }
+    },
+    "pk_infusion": {
+      "both": {
+        "branch_augmented_alpha_analysis_strength": 1,
+        "global_augmented_alpha_analysis_strength": 1
+      }
+    },
+    "pendulum": {
+      "both": {
+        "pce_temperature": 0.72,
+        "evidence_shrinkage": 0.16,
+        "local_grid_points": 11,
+        "local_grid_topk": 4,
+        "local_grid_min_spacing": 0.001,
+        "state_weight_power": 1,
+        "state_map_blend": 0
+      },
+      "apce": {
+        "apce_temperature": 0.62,
+        "apce_forgetting": 0.992,
+        "apce_entropy_floor": 0.16
+      }
+    },
+    "fhn": {
+      "both": {
+        "branch_augmented_alpha_analysis_strength": 1,
+        "global_augmented_alpha_analysis_strength": 1
+      }
+    },
+    "robertson": {
+      "both": {
+        "local_grid_points": 7,
+        "local_grid_topk": 2,
+        "local_grid_min_spacing": 0.001,
+        "state_weight_power": 1,
+        "state_map_blend": 0,
+        "global_analysis_strength": 0.5,
+        "branch_augmented_alpha_analysis_strength": 0.6,
+        "global_augmented_alpha_analysis_strength": 0.25,
+        "analysis_iterations": 2
+      }
+    }
+  }
+}

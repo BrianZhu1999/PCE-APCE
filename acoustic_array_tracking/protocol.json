@@ -1,0 +1,24 @@
+{
+  "single_source": {
+    "segment": "single_source_evaluation",
+    "ensemble_size": 48,
+    "q_min_accel_mps2": 1.0,
+    "q_max_accel_mps2": 8.0,
+    "position_init_std_m": 30.0,
+    "velocity_init_std_mps": 5.0,
+    "observation_covariance_scale": 1.0,
+    "turn_rate_radps": -0.1,
+    "innovation_chi2_threshold": null
+  },
+  "dual_source": {
+    "segment": "dual_evaluation",
+    "ensemble_size": 48,
+    "q_min_accel_mps2": 2.0,
+    "q_max_accel_mps2": 12.0,
+    "position_init_std_m": 50.0,
+    "velocity_init_std_mps": 10.0,
+    "observation_covariance_scale": 1.0,
+    "turn_rate_radps": 0.2,
+    "innovation_chi2_threshold": 16.26623619623813
+  }
+}

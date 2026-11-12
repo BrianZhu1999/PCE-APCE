@@ -1,0 +1,37 @@
+{
+  "all_passed": true,
+  "numeric_relative_tolerance": 1e-10,
+  "numeric_absolute_tolerance": 1e-12,
+  "checks": [
+    {
+      "file": "controlled_summary.csv",
+      "rows": 36,
+      "matches_reference": true
+    },
+    {
+      "file": "controlled_theory.csv",
+      "rows": 126,
+      "matches_reference": true
+    },
+    {
+      "file": "fhn_absolute_summary.csv",
+      "rows": 54,
+      "matches_reference": true
+    },
+    {
+      "file": "pk_45_summary.csv",
+      "rows": 176,
+      "matches_reference": true
+    },
+    {
+      "file": "fhn_paired_primary.csv",
+      "rows": 10,
+      "matches_reference": true
+    },
+    {
+      "file": "fhn_paired_secondary.csv",
+      "rows": 35,
+      "matches_reference": true
+    }
+  ]
+}

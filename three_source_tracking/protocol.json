@@ -1,0 +1,10 @@
+{
+  "sampling_rate_hz": 3050,
+  "snapshot_length": 128,
+  "snapshots_per_frame": 5,
+  "frame_step_samples": 640,
+  "sound_speed_mps": 340,
+  "targets": 3,
+  "state": "[E,N,U,vE,vN,vU]",
+  "runtime_gps": "GPS is used for calibration or offline evaluation only; it is not an online observation."
+}

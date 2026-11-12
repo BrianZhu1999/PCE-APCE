@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "PCE-APCE: Forecast-History Separation for Dynamical Inference"
+message: "Please cite the accompanying manuscript when using this software."
+type: software
+authors:
+  - family-names: Zhu
+    given-names: Ziyuan
+    affiliation: "Nanjing University"
+repository-code: "https://github.com/BrianZhu1999/PCE-APCE"
+license: MIT
+version: 0.1.0
+date-released: 2026-09-04
+keywords:
+  - data assimilation
+  - dynamical inference
+  - forecast-history separation
+  - predictive scoring
+  - ensemble methods

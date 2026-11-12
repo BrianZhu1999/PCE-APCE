@@ -1,0 +1,67 @@
+{
+  "python": "3.12.2",
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.0",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.0",
+    "PyMuPDF": "1.28.2"
+  },
+  "files": [
+    {
+      "relative_input": "inputs/fhn/budget_method_means.csv",
+      "processing": "Unchanged file.",
+      "source_label": "budget_method_means.csv"
+    },
+    {
+      "relative_input": "inputs/fhn/budget_per_run.csv",
+      "processing": "Unchanged file.",
+      "source_label": "budget_per_run.csv"
+    },
+    {
+      "relative_input": "inputs/fhn/budget_primary.csv",
+      "processing": "Unchanged file.",
+      "source_label": "budget_primary.csv"
+    },
+    {
+      "relative_input": "inputs/fhn/budget_secondary.csv",
+      "processing": "Unchanged file.",
+      "source_label": "budget_secondary.csv"
+    },
+    {
+      "relative_input": "inputs/pk/paired_seed_results.csv",
+      "processing": "Retain seeds 2026081205 through 2026081249; all two methods and four observation factors retained. 360 paired rows.",
+      "source_label": "paired_seed_results.csv"
+    },
+    {
+      "relative_input": "reference_results/controlled_summary.csv",
+      "processing": "Published reproduction input/reference file.",
+      "source_label": "controlled_summary.csv"
+    },
+    {
+      "relative_input": "reference_results/controlled_theory.csv",
+      "processing": "Published reproduction input/reference file.",
+      "source_label": "controlled_theory.csv"
+    },
+    {
+      "relative_input": "reference_results/fhn_absolute_summary.csv",
+      "processing": "Published reproduction input/reference file.",
+      "source_label": "fhn_absolute_summary.csv"
+    },
+    {
+      "relative_input": "reference_results/fhn_paired_primary.csv",
+      "processing": "Published reproduction input/reference file.",
+      "source_label": "fhn_paired_primary.csv"
+    },
+    {
+      "relative_input": "reference_results/fhn_paired_secondary.csv",
+      "processing": "Published reproduction input/reference file.",
+      "source_label": "fhn_paired_secondary.csv"
+    },
+    {
+      "relative_input": "reference_results/pk_45_summary.csv",
+      "processing": "Published reproduction input/reference file.",
+      "source_label": "pk_45_summary.csv"
+    }
+  ]
+}

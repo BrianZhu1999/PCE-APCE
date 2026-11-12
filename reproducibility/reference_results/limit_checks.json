@@ -1,0 +1,332 @@
+{
+  "t1_equal_accuracy_checks": [
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.2,
+      "gain": 0,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.2,
+      "gain": 0.1,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.2,
+      "gain": 0.25,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.2,
+      "gain": 0.5,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.2,
+      "gain": 0.75,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.2,
+      "gain": 1,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.2,
+      "gain": 0,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.2,
+      "gain": 0.1,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.2,
+      "gain": 0.25,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.2,
+      "gain": 0.5,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.2,
+      "gain": 0.75,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.2,
+      "gain": 1,
+      "correct_probability": 0.539827837277029,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.6,
+      "gain": 0,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.6,
+      "gain": 0.1,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.6,
+      "gain": 0.25,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.6,
+      "gain": 0.5,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.6,
+      "gain": 0.75,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 0.6,
+      "gain": 1,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.6,
+      "gain": 0,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.6,
+      "gain": 0.1,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.6,
+      "gain": 0.25,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.6,
+      "gain": 0.5,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.6,
+      "gain": 0.75,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 0.6,
+      "gain": 1,
+      "correct_probability": 0.5132956138170921,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 1.2,
+      "gain": 0,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 1.2,
+      "gain": 0.1,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 1.2,
+      "gain": 0.25,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 1.2,
+      "gain": 0.5,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 1.2,
+      "gain": 0.75,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": -0.02,
+      "delta": 0.04,
+      "sigma": 1.2,
+      "gain": 1,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 1.2,
+      "gain": 0,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 1.2,
+      "gain": 0.1,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 1.2,
+      "gain": 0.25,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 1.2,
+      "gain": 0.5,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 1.2,
+      "gain": 0.75,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    },
+    {
+      "T": 1,
+      "truth": 0.02,
+      "delta": -0.04,
+      "sigma": 1.2,
+      "gain": 1,
+      "correct_probability": 0.5066487301936825,
+      "equal_to_gain_zero": true
+    }
+  ],
+  "t1_check_count": 36,
+  "positive_and_negative_delta_checked": true,
+  "T2_gain1_drift_variance_over_sigma_squared": 0.2222222222222222,
+  "main_experiment_unchanged": true
+}

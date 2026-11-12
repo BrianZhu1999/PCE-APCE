@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.1",
+  "title": "PCE-APCE supplementary media",
+  "repository": "https://github.com/BrianZhu1999/PCE-APCE",
+  "generated": "2026-09-24",
+  "default_language": "en",
+  "languages": [
+    "en",
+    "zh-CN"
+  ],
+  "movies": [
+    {
+      "number": 1,
+      "title_en": "Three Canonical Uncertain Equations",
+      "file": "Supplementary_Movie_1_classic_systems.mp4",
+      "duration_s": 26,
+      "poster": "assets/posters/movie-1.png"
+    },
+    {
+      "number": 2,
+      "title_en": "Five ODE Systems",
+      "file": "Supplementary_Movie_2_applied_odes.mp4",
+      "duration_s": 72,
+      "poster": "assets/posters/movie-2.png"
+    },
+    {
+      "number": 3,
+      "title_en": "Lorenz–96 Dynamics",
+      "file": "Supplementary_Movie_3_Lorenz96.mp4",
+      "duration_s": 16,
+      "poster": "assets/posters/movie-3.png"
+    },
+    {
+      "number": 4,
+      "title_en": "Kuramoto–Sivashinsky Equation",
+      "file": "Supplementary_Movie_4_Kuramoto_Sivashinsky.mp4",
+      "duration_s": 28,
+      "poster": "assets/posters/movie-4.png"
+    },
+    {
+      "number": 5,
+      "title_en": "Kolmogorov Turbulent Flow",
+      "file": "Supplementary_Movie_5_Kolmogorov_Turbulent_Flow.mp4",
+      "duration_s": 12.833,
+      "poster": "assets/posters/movie-5.png"
+    },
+    {
+      "number": 6,
+      "title_en": "VIV–PIV Experiment",
+      "file": "Supplementary_Movie_6_VIV_PIV.mp4",
+      "duration_s": 168.66666666666666,
+      "poster": "assets/posters/movie-6.png",
+      "bytes": 27432473,
+      "revision": "20260919-751",
+      "spatial_observations": 751,
+      "scalar_observations": 1502
+    },
+    {
+      "number": 7,
+      "title_en": "MeshRIR 3D Acoustic Field",
+      "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
+      "duration_s": 45.667,
+      "bytes": 15281263,
+      "poster": "assets/posters/movie-7-isosurfaces.png",
+      "default_variant": "isosurfaces",
+      "variants": [
+        {
+          "id": "isosurfaces",
+          "zh": "等值面",
+          "en": "Isosurfaces",
+          "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
+          "poster": "assets/posters/movie-7-isosurfaces.png",
+          "duration_s": 45.666666666666664,
+          "revision": "20260918-white"
+        },
+        {
+          "id": "slices",
+          "zh": "切片",
+          "en": "Slices",
+          "file": "Supplementary_Movie_7_MeshRIR_3D.mp4",
+          "poster": "assets/posters/movie-7.png",
+          "duration_s": 45.667
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title_en": "Acoustic Source Localization and Trajectory Tracking",
+      "file": "Supplementary_Movie_8_Acoustic_Source_Localization_and_Trajectory_Tracking.mp4",
+      "duration_s": 36.375,
+      "poster": "assets/posters/movie-8.png"
+    }
+  ],
+  "components": [
+    {
+      "file": "Supplementary_Sensor_Blackout_Explorer.html",
+      "title": "Sparse observation and blackout explorer",
+      "scope": "Observations, sensors and post-blackout forecasts",
+      "data_dependencies": []
+    },
+    {
+      "file": "VIV_PIV_5regimes_interactive.html",
+      "title": "VIV-PIV five-regime explorer",
+      "scope": "Sparse PIV observations, reconstructed wakes and spectra",
+      "data_dependencies": [
+        "viv_piv_data/"
+      ],
+      "revision": "20260919",
+      "spatial_observations": 751,
+      "scalar_observations": 1502
+    },
+    {
+      "file": "MeshRIR_3D_interactive.html",
+      "title": "MeshRIR 3D acoustic field",
+      "scope": "Synchronized isosurfaces and slices of observations, APCE and measured reference",
+      "data_dependencies": [
+        "meshrir_isosurface_data/"
+      ],
+      "default_view": "isosurfaces",
+      "legacy_viewer": {
+        "file": "MeshRIR_3D_slices_legacy.html"
+      },
+      "display_details": "meshrir_display_details.json"
+    },
+    {
+      "file": "Baoding_Tracking_3D_interactive.html",
+      "title": "Acoustic source localization and tracking",
+      "scope": "One-, two- and three-source trajectories",
+      "data_dependencies": []
+    },
+    {
+      "file": "Supplementary_APCE_Inspector.html",
+      "title": "APCE mechanism inspector",
+      "scope": "Candidate weights, entropy and alpha estimates",
+      "data_dependencies": [],
+      "revision": "20260919"
+    }
+  ],
+  "notes": {
+    "movie_6": "Movie 6 and the interactive viewer show five measured wake regimes using 751 spatial measurement locations (1,502 scalar velocity observations).",
+    "movie_7": "Movie 7 presents the measured MeshRIR acoustic-field reconstruction as isosurfaces and slices.",
+    "apce_inspector": "Candidate weights, normalized entropy, alpha estimates and one state coordinate for Lorenz–96 and Kuramoto–Sivashinsky."
+  }
+}

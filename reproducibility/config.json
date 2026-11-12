@@ -1,0 +1,19 @@
+{
+  "study": "Fixed-candidate feedback and Gaussian scoring comparison",
+  "seed": 2026110301,
+  "replicates_per_truth_noise": 2000,
+  "observation_count": 40,
+  "blackout_steps": 20,
+  "initial_state": 0,
+  "process_noise_sd": 0,
+  "candidate_sets": {"two": [-0.02, 0.02], "five": [-0.08, -0.04, 0, 0.04, 0.08]},
+  "feedback_strengths": [0, 0.1, 0.25, 0.5, 0.75, 1],
+  "observation_noise_sd": [0.2, 0.6, 1.2],
+  "scoring": "Gaussian marginal composite score using the exact unconditional residual marginal variances; compared with the exact Gaussian joint likelihood retaining temporal residual covariance.",
+  "truth_selection": "Each fixed candidate is evaluated as the generating drift.",
+  "pairing": "Identical standard-normal noise realization across feedback strengths and noise scales within each candidate-set/truth block.",
+  "state_metrics": "Trajectory RMSE of uniform-candidate analysis mean and composite-score-weighted analysis mean. Weights include the current observation score before the analysis mean is formed.",
+  "blackout": "All scoring variants and feedback strengths start from the same final observation y_T. The selected or weighted candidate drift is propagated for 20 steps. Also report drift-only horizon error.",
+  "intervals": "Wilson 95% intervals for selection rates; 10000 paired bootstrap means for existing FHN/PK effects; normal 95% intervals across simulated trajectory summaries.",
+  "display_condition": {"candidate_set": "two", "truth": 0.02, "noise_sd": 0.6, "replicate": 0}
+}

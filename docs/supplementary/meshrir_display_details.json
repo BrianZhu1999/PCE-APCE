@@ -1,0 +1,635 @@
+{
+  "date": "2026-09-18",
+  "source_dataset": "MeshRIR S1-M3969",
+  "frames": 1024,
+  "grid_order_zyx": [
+    9,
+    21,
+    21
+  ],
+  "time_ms": [
+    0,
+    63.9375
+  ],
+  "source_sample_rate_hz": 16000,
+  "pressure_units": "arbitrary units",
+  "isosurface_levels": [
+    -0.004,
+    -0.002,
+    -0.001,
+    0.001,
+    0.002,
+    0.004
+  ],
+  "opacities": {
+    "0.001": 0.16,
+    "0.002": 0.32,
+    "0.004": 0.82
+  },
+  "camera": {
+    "azimuth": -53,
+    "elevation": 38
+  },
+  "observation_color_range": [
+    -0.02,
+    0.02
+  ],
+  "interior_observations": 64,
+  "boundary_observations": 128,
+  "panels": {
+    "a": "all 64 interior reference observations",
+    "b": "APCE mean",
+    "c": "measured reference"
+  },
+  "geometry": "Lewiner marching cubes, full grid, all faces retained, float32 coordinates; normal-only illumination averaging",
+  "fields": "exact float32, no smoothing or normalization",
+  "chunk_size": 16,
+  "mesh_files": [
+    {
+      "file": "chunk_00.js",
+      "frames": [
+        0,
+        15
+      ],
+      "raw_bytes": 186700,
+      "compressed_bytes": 111063
+    },
+    {
+      "file": "chunk_01.js",
+      "frames": [
+        16,
+        31
+      ],
+      "raw_bytes": 205136,
+      "compressed_bytes": 128309
+    },
+    {
+      "file": "chunk_02.js",
+      "frames": [
+        32,
+        47
+      ],
+      "raw_bytes": 375292,
+      "compressed_bytes": 255544
+    },
+    {
+      "file": "chunk_03.js",
+      "frames": [
+        48,
+        63
+      ],
+      "raw_bytes": 1081568,
+      "compressed_bytes": 762022
+    },
+    {
+      "file": "chunk_04.js",
+      "frames": [
+        64,
+        79
+      ],
+      "raw_bytes": 2140224,
+      "compressed_bytes": 1503942
+    },
+    {
+      "file": "chunk_05.js",
+      "frames": [
+        80,
+        95
+      ],
+      "raw_bytes": 2775820,
+      "compressed_bytes": 1955234
+    },
+    {
+      "file": "chunk_06.js",
+      "frames": [
+        96,
+        111
+      ],
+      "raw_bytes": 2680652,
+      "compressed_bytes": 1888989
+    },
+    {
+      "file": "chunk_07.js",
+      "frames": [
+        112,
+        127
+      ],
+      "raw_bytes": 2412532,
+      "compressed_bytes": 1667432
+    },
+    {
+      "file": "chunk_08.js",
+      "frames": [
+        128,
+        143
+      ],
+      "raw_bytes": 1913780,
+      "compressed_bytes": 1327300
+    },
+    {
+      "file": "chunk_09.js",
+      "frames": [
+        144,
+        159
+      ],
+      "raw_bytes": 2363544,
+      "compressed_bytes": 1614838
+    },
+    {
+      "file": "chunk_10.js",
+      "frames": [
+        160,
+        175
+      ],
+      "raw_bytes": 2604556,
+      "compressed_bytes": 1795159
+    },
+    {
+      "file": "chunk_11.js",
+      "frames": [
+        176,
+        191
+      ],
+      "raw_bytes": 2848172,
+      "compressed_bytes": 1967575
+    },
+    {
+      "file": "chunk_12.js",
+      "frames": [
+        192,
+        207
+      ],
+      "raw_bytes": 2366404,
+      "compressed_bytes": 1646286
+    },
+    {
+      "file": "chunk_13.js",
+      "frames": [
+        208,
+        223
+      ],
+      "raw_bytes": 2973432,
+      "compressed_bytes": 2081379
+    },
+    {
+      "file": "chunk_14.js",
+      "frames": [
+        224,
+        239
+      ],
+      "raw_bytes": 3471376,
+      "compressed_bytes": 2445825
+    },
+    {
+      "file": "chunk_15.js",
+      "frames": [
+        240,
+        255
+      ],
+      "raw_bytes": 3752900,
+      "compressed_bytes": 2633048
+    },
+    {
+      "file": "chunk_16.js",
+      "frames": [
+        256,
+        271
+      ],
+      "raw_bytes": 2729304,
+      "compressed_bytes": 1898514
+    },
+    {
+      "file": "chunk_17.js",
+      "frames": [
+        272,
+        287
+      ],
+      "raw_bytes": 3219724,
+      "compressed_bytes": 2257632
+    },
+    {
+      "file": "chunk_18.js",
+      "frames": [
+        288,
+        303
+      ],
+      "raw_bytes": 3753712,
+      "compressed_bytes": 2651718
+    },
+    {
+      "file": "chunk_19.js",
+      "frames": [
+        304,
+        319
+      ],
+      "raw_bytes": 3144264,
+      "compressed_bytes": 2219566
+    },
+    {
+      "file": "chunk_20.js",
+      "frames": [
+        320,
+        335
+      ],
+      "raw_bytes": 2842340,
+      "compressed_bytes": 1993000
+    },
+    {
+      "file": "chunk_21.js",
+      "frames": [
+        336,
+        351
+      ],
+      "raw_bytes": 3302476,
+      "compressed_bytes": 2332988
+    },
+    {
+      "file": "chunk_22.js",
+      "frames": [
+        352,
+        367
+      ],
+      "raw_bytes": 3328376,
+      "compressed_bytes": 2350999
+    },
+    {
+      "file": "chunk_23.js",
+      "frames": [
+        368,
+        383
+      ],
+      "raw_bytes": 2546068,
+      "compressed_bytes": 1784591
+    },
+    {
+      "file": "chunk_24.js",
+      "frames": [
+        384,
+        399
+      ],
+      "raw_bytes": 2934624,
+      "compressed_bytes": 2074825
+    },
+    {
+      "file": "chunk_25.js",
+      "frames": [
+        400,
+        415
+      ],
+      "raw_bytes": 3299920,
+      "compressed_bytes": 2328897
+    },
+    {
+      "file": "chunk_26.js",
+      "frames": [
+        416,
+        431
+      ],
+      "raw_bytes": 1941916,
+      "compressed_bytes": 1350484
+    },
+    {
+      "file": "chunk_27.js",
+      "frames": [
+        432,
+        447
+      ],
+      "raw_bytes": 2074592,
+      "compressed_bytes": 1456309
+    },
+    {
+      "file": "chunk_28.js",
+      "frames": [
+        448,
+        463
+      ],
+      "raw_bytes": 2661980,
+      "compressed_bytes": 1865650
+    },
+    {
+      "file": "chunk_29.js",
+      "frames": [
+        464,
+        479
+      ],
+      "raw_bytes": 2913896,
+      "compressed_bytes": 2052723
+    },
+    {
+      "file": "chunk_30.js",
+      "frames": [
+        480,
+        495
+      ],
+      "raw_bytes": 2978920,
+      "compressed_bytes": 2098663
+    },
+    {
+      "file": "chunk_31.js",
+      "frames": [
+        496,
+        511
+      ],
+      "raw_bytes": 2492636,
+      "compressed_bytes": 1745959
+    },
+    {
+      "file": "chunk_32.js",
+      "frames": [
+        512,
+        527
+      ],
+      "raw_bytes": 3580628,
+      "compressed_bytes": 2533395
+    },
+    {
+      "file": "chunk_33.js",
+      "frames": [
+        528,
+        543
+      ],
+      "raw_bytes": 2135856,
+      "compressed_bytes": 1511521
+    },
+    {
+      "file": "chunk_34.js",
+      "frames": [
+        544,
+        559
+      ],
+      "raw_bytes": 1859552,
+      "compressed_bytes": 1312245
+    },
+    {
+      "file": "chunk_35.js",
+      "frames": [
+        560,
+        575
+      ],
+      "raw_bytes": 3696716,
+      "compressed_bytes": 2614612
+    },
+    {
+      "file": "chunk_36.js",
+      "frames": [
+        576,
+        591
+      ],
+      "raw_bytes": 2345576,
+      "compressed_bytes": 1659471
+    },
+    {
+      "file": "chunk_37.js",
+      "frames": [
+        592,
+        607
+      ],
+      "raw_bytes": 2569956,
+      "compressed_bytes": 1813291
+    },
+    {
+      "file": "chunk_38.js",
+      "frames": [
+        608,
+        623
+      ],
+      "raw_bytes": 2624780,
+      "compressed_bytes": 1841982
+    },
+    {
+      "file": "chunk_39.js",
+      "frames": [
+        624,
+        639
+      ],
+      "raw_bytes": 2492340,
+      "compressed_bytes": 1747927
+    },
+    {
+      "file": "chunk_40.js",
+      "frames": [
+        640,
+        655
+      ],
+      "raw_bytes": 3429016,
+      "compressed_bytes": 2420193
+    },
+    {
+      "file": "chunk_41.js",
+      "frames": [
+        656,
+        671
+      ],
+      "raw_bytes": 2473732,
+      "compressed_bytes": 1736456
+    },
+    {
+      "file": "chunk_42.js",
+      "frames": [
+        672,
+        687
+      ],
+      "raw_bytes": 2907796,
+      "compressed_bytes": 2046842
+    },
+    {
+      "file": "chunk_43.js",
+      "frames": [
+        688,
+        703
+      ],
+      "raw_bytes": 3097276,
+      "compressed_bytes": 2180303
+    },
+    {
+      "file": "chunk_44.js",
+      "frames": [
+        704,
+        719
+      ],
+      "raw_bytes": 3006368,
+      "compressed_bytes": 2113060
+    },
+    {
+      "file": "chunk_45.js",
+      "frames": [
+        720,
+        735
+      ],
+      "raw_bytes": 3577108,
+      "compressed_bytes": 2520978
+    },
+    {
+      "file": "chunk_46.js",
+      "frames": [
+        736,
+        751
+      ],
+      "raw_bytes": 3587208,
+      "compressed_bytes": 2534171
+    },
+    {
+      "file": "chunk_47.js",
+      "frames": [
+        752,
+        767
+      ],
+      "raw_bytes": 2426692,
+      "compressed_bytes": 1714233
+    },
+    {
+      "file": "chunk_48.js",
+      "frames": [
+        768,
+        783
+      ],
+      "raw_bytes": 1262532,
+      "compressed_bytes": 889619
+    },
+    {
+      "file": "chunk_49.js",
+      "frames": [
+        784,
+        799
+      ],
+      "raw_bytes": 2709960,
+      "compressed_bytes": 1913471
+    },
+    {
+      "file": "chunk_50.js",
+      "frames": [
+        800,
+        815
+      ],
+      "raw_bytes": 2373928,
+      "compressed_bytes": 1674788
+    },
+    {
+      "file": "chunk_51.js",
+      "frames": [
+        816,
+        831
+      ],
+      "raw_bytes": 708276,
+      "compressed_bytes": 496189
+    },
+    {
+      "file": "chunk_52.js",
+      "frames": [
+        832,
+        847
+      ],
+      "raw_bytes": 2544268,
+      "compressed_bytes": 1785647
+    },
+    {
+      "file": "chunk_53.js",
+      "frames": [
+        848,
+        863
+      ],
+      "raw_bytes": 2764484,
+      "compressed_bytes": 1951854
+    },
+    {
+      "file": "chunk_54.js",
+      "frames": [
+        864,
+        879
+      ],
+      "raw_bytes": 1960124,
+      "compressed_bytes": 1383720
+    },
+    {
+      "file": "chunk_55.js",
+      "frames": [
+        880,
+        895
+      ],
+      "raw_bytes": 2509152,
+      "compressed_bytes": 1769868
+    },
+    {
+      "file": "chunk_56.js",
+      "frames": [
+        896,
+        911
+      ],
+      "raw_bytes": 3402384,
+      "compressed_bytes": 2402749
+    },
+    {
+      "file": "chunk_57.js",
+      "frames": [
+        912,
+        927
+      ],
+      "raw_bytes": 1631956,
+      "compressed_bytes": 1148958
+    },
+    {
+      "file": "chunk_58.js",
+      "frames": [
+        928,
+        943
+      ],
+      "raw_bytes": 2384364,
+      "compressed_bytes": 1684986
+    },
+    {
+      "file": "chunk_59.js",
+      "frames": [
+        944,
+        959
+      ],
+      "raw_bytes": 3462072,
+      "compressed_bytes": 2444882
+    },
+    {
+      "file": "chunk_60.js",
+      "frames": [
+        960,
+        975
+      ],
+      "raw_bytes": 2862232,
+      "compressed_bytes": 2022493
+    },
+    {
+      "file": "chunk_61.js",
+      "frames": [
+        976,
+        991
+      ],
+      "raw_bytes": 3424040,
+      "compressed_bytes": 2418211
+    },
+    {
+      "file": "chunk_62.js",
+      "frames": [
+        992,
+        1007
+      ],
+      "raw_bytes": 3244672,
+      "compressed_bytes": 2294673
+    },
+    {
+      "file": "chunk_63.js",
+      "frames": [
+        1008,
+        1023
+      ],
+      "raw_bytes": 3510756,
+      "compressed_bytes": 2484369
+    }
+  ],
+  "movie": {
+    "file": "Supplementary_Movie_7_MeshRIR_3D_Isosurfaces.mp4",
+    "frames": 1096,
+    "fps": 24,
+    "title_frames": 48,
+    "data_frames": 1024,
+    "hold_frames": 24
+  },
+  "scientific_recomputation": false,
+  "metadata_updated": "2026-09-19"
+}

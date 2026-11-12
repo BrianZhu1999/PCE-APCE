@@ -1,0 +1,66 @@
+# Python environments and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+
+# Local experiment outputs
+results/
+outputs/
+artifacts/
+plots/
+checkpoints/
+logs/
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.zarr/
+*.gif
+*.mp4
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.pdf
+*.svg
+*.xdv
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+
+# Generated tabular outputs; allow reference and input tables
+*.csv
+!reproducibility/inputs/**/*.csv
+!reproducibility/reference_results/*.csv
+*_manifest.json
+
+# Local editors and operating systems
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Credentials
+.env
+.env.*
+!.env.example
+credentials.*
+secrets.*
